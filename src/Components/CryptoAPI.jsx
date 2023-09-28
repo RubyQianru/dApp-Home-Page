@@ -15,7 +15,15 @@ function CryptoAPI() {
         acc[assets[index]] = response.data.rate;
         return acc;
       }, {});
+
+    //   const urls = responses.map(response => {
+    //     const path = response.data.path;
+    //     const url = `https://rest.coinapi.io${path}`;
+    //     return url;
+    //   });
       
+    //   console.log(urls);
+
       setPortfolio(exchangeRates);
     }
     fetchExchangeRates();
