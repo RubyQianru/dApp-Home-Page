@@ -5,6 +5,8 @@ import ResponsiveAppBar from './Components/Navbar';
 import StickyFooter from './Components/StickyFooter';
 import Hero3D from './Components/hero3D';
 import BusinessCard from './Components/BusinessCard';
+import CryptoAPI from './Components/CryptoAPI';
+
 
 const Structure = () => {
   return (
@@ -29,6 +31,10 @@ const Structure = () => {
         <div className={`${styles.boxWidth}` }>
           <BusinessCard/>       
         </div>
+      </div>
+
+      <div className = {``}>
+        <CryptoAPI/>
       </div>
 
       <div className = {``}>
