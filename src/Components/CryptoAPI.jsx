@@ -1,41 +1,72 @@
 import React, { useState, useEffect } from 'react';
+import BTC from './Icons/BTC.png';
+import DOGE from './Icons/DOGE.png';
+import ETH from './Icons/ETH.png';
+import PEPE from './Icons/PEPE.png';
+import XRP from './Icons/XRP.png';
+
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
+const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(2),
+    margin: theme.spacing(2 ),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+
 import axios from 'axios';
  
 function CryptoAPI() {
   const [portfolio, setPortfolio] = useState([]);
+
   useEffect(() => {
     async function fetchExchangeRates() {
-      const assets = ['BTC', 'ETH', 'XRP','PEPE','DOGE'];
+      const assets = ['BTC', 'ETH', 'XRP','PEPE','DOGE']
 
-      const promises = assets.map(asset =>
-        axios.get(`https://rest.coinapi.io/v1/exchangerate/${asset}/USD?apikey=D08C9C13-EA00-4A70-8156-6ABB5C12585E`))
-      const responses = await Promise.all(promises);
+      const promises1 = assets.map(asset => {
+        return axios.get(`https://rest.coinapi.io/v1/exchangerate/${asset}/USD?apikey=D08C9C13-EA00-4A70-8156-6ABB5C12585E`)
+      })
 
-      const exchangeRates = responses.reduce((acc, response, index) => {
-        acc[assets[index]] = response.data.rate;
-        return acc;
-      }, {});
+      const responses1 = await Promise.all(promises1)
 
-    //   const urls = responses.map(response => {
-    //     const path = response.data.path;
-    //     const url = `https://rest.coinapi.io${path}`;
-    //     return url;
-    //   });
-      
-    //   console.log(urls);
+      const fetchedList = responses1.reduce((acc, response, index) => {
+        acc[assets[index]] = response.data.rate
+        return acc
+      }, {})
 
-      setPortfolio(exchangeRates);
+
+      setPortfolio(fetchedList)
     }
-    fetchExchangeRates();
+    fetchExchangeRates()
+
   }, []);
-  
+
+  const picList = [
+      BTC, ETH, XRP, PEPE, DOGE
+]
+
   return (
+    
     <div className="CryptoAPI">
-     <ul>
-        {Object.entries(portfolio).map(([asset, exchangeRate]) => (
-          <li key={asset}>{asset}: {exchangeRate}</li>
+     <Box sx={{ flexGrow: 1 }}>
+        {Object.entries(portfolio).map(([asset, exchangeRate], index) => (
+          <Grid container key={asset} className='Item' rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Grid item xs={6}>
+            <Item>
+              {asset}: {exchangeRate} 
+              <img src={picList[index]} alt={`${asset}`}/>
+            </Item>
+            </Grid>
+            
+            
+          </Grid>
         ))}
-      </ul>
+      </Box>
     </div>
   );
 }
