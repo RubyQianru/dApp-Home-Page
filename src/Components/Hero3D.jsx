@@ -6,7 +6,7 @@ import * as THREE from 'three'
 
 export default function Hero3D() {
   return (
-    <Canvas shadows camera={{ position: [0, 0, -30], fov: 50 }} style={{ width: "100vw", height: "50vw", left: "-25%" }}>
+    <Canvas shadows camera={{ position: [0, 0, -30], fov: 50 }} style={{ width: "100vw", height: "40vw", left: "-25%" }}>
     <group position={[0, 0, 0]}>
       <Model scale={[0.03,0.03,0.03]}/>
     </group>

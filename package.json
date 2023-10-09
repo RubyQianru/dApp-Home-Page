@@ -10,17 +10,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@coinpaprika/api-nodejs-client": "^2.0.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.11",
     "@react-three/drei": "^9.84.2",
     "@react-three/fiber": "^8.14.2",
     "@types/three": "^0.156.0",
     "axios": "^1.5.1",
+    "coinmarketcap-api": "^3.1.1",
+    "express": "^4.18.2",
     "lamina": "^1.1.23",
+    "node-coinmarketcap-api": "^1.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0",
+    "request": "^2.88.2",
     "three": "^0.156.1"
   },
   "devDependencies": {

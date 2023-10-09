@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from './style';
+import styles from '../style';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -40,9 +40,10 @@ function ResponsiveAppBar() {
     <AppBar position="fixed" 
     style={{ boxShadow: "initial", 
         background:"none",
-        padding:"0 2.5rem" }}>
-      <Container maxWidth="100%"  style={{color:'initial'}}>
-        <Toolbar disableGutters>
+        padding:"0 2.5rem",
+        color:'white'}} >
+      <Container maxWidth="100%"  style={{color:'white'}} >
+        <Toolbar disableGutters style={{color:'white'}} >
           <Typography
             variant="h6"
             noWrap
@@ -68,7 +69,6 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
             >
               <MenuIcon />
             </IconButton>
@@ -110,7 +110,8 @@ function ResponsiveAppBar() {
               fontWeight: 700,
               letterSpacing: '.3rem',
               textDecoration: 'none',
-              fontSize:"2.5rem"
+              fontSize:"2.5rem",
+              color:'white'
             }}
           >
             RUBY
@@ -124,7 +125,7 @@ function ResponsiveAppBar() {
                   display: 'block',
                   fontSize: '1.2rem',
                   padding: '0.2rem 1.8rem',
-                  color:'initial'
+                  color:'white'
                   }}
               >
                 {page}
@@ -132,7 +133,7 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          <Box  className ={`${styles.flexSpaceX}`}>
+          <Box  className ={`${styles.flexSpaceX}`} style={{}}>
             <Button variant="contained" size="large" className = {` ${styles.buttonColor}` }>LAUNCH APP</Button>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

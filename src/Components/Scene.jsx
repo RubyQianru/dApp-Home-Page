@@ -32,10 +32,10 @@ export function Model(props) {
       <mesh geometry={nodes.Object_2.geometry} rotation={[-Math.PI / 2, 0, 0]}>
       <LayerMaterial ref={ref} toneMapped={false}>
         <Depth colorA="#ff0080" colorB="black" alpha={1} mode="normal" near={0.5 * gradient} far={0.5} origin={[0, 0, 0]} />
-        <Depth colorA="blue" colorB="#f7b955" alpha={1} mode="add" near={2 * gradient} far={20} origin={[0, 1, 1]} />
-        <Depth colorA="green" colorB="#f7b955" alpha={1} mode="add" near={3 * gradient} far={0} origin={[0, 1, -1]} />
-        <Depth colorA="white" colorB="red" alpha={1} mode="overlay" near={1.5 * gradient} far={25} origin={[1, -1, -1]} />
-        <Fresnel mode="add" color="white" intensity={0.3} power={1.5} bias={0.05} />
+        <Depth colorA="blue" colorB="pink" alpha={1} mode="add" near={2 * gradient} far={20} origin={[0, 1, 1]} />
+        <Depth colorA="green" colorB="pink" alpha={1} mode="add" near={3 * gradient} far={0} origin={[0, 1, -1]} />
+        <Depth colorA="pink" colorB="red" alpha={1} mode="overlay" near={1.5 * gradient} far={25} origin={[1, -1, -1]} />
+        <Fresnel mode="add" color="white" intensity={0.7} power={1.5} bias={0.05} />
       </LayerMaterial>
       </mesh>
     </group>

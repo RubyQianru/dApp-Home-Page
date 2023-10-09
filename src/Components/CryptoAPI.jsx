@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './style';
+import styles from '../style';
 
 import BTC from './Icons/BTC.png';
 import DOGE from './Icons/DOGE.png';
