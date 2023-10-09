@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styles from './style';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -12,7 +13,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -37,13 +37,12 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" 
+    <AppBar position="fixed" 
     style={{ boxShadow: "initial", 
         background:"none",
         padding:"0 2.5rem" }}>
       <Container maxWidth="100%"  style={{color:'initial'}}>
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -98,7 +97,6 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -112,6 +110,7 @@ function ResponsiveAppBar() {
               fontWeight: 700,
               letterSpacing: '.3rem',
               textDecoration: 'none',
+              fontSize:"2.5rem"
             }}
           >
             RUBY
@@ -133,7 +132,8 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box  className ={`${styles.flexSpaceX}`}>
+            <Button variant="contained" size="large" className = {` ${styles.buttonColor}` }>LAUNCH APP</Button>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />

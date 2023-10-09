@@ -16,14 +16,13 @@ const Structure = () => {
           <ResponsiveAppBar/>
       </div>
 
-      <div className={` ${styles.flexCenter}` }>
-        <div className={``}>
+      <div className={` ${styles.flexCenter}` } style={{backgroundColor: 'silver', position:'relative'}}>
+        <div className={``} >
           <Hero3D/>
         </div>
-        <div className={``} style={{position: 'absolute', left:'60%'}}>
+        <div className={` ${styles.flexCenter} ${styles.flexColumn}` } style={{position: 'absolute', left:'60%'}}>
             <div>Advertisement</div>
-            <br/>
-            <Button variant="contained" size="large" style={{background:'initial', color: 'black' }}>LAUNCH APP</Button>
+            <Button variant="contained" size="large" className={`${styles.buttonColor}`}>LAUNCH APP</Button>
         </div>
       </div>
 

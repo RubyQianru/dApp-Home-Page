@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import styles from './style';
+
 import BTC from './Icons/BTC.png';
 import DOGE from './Icons/DOGE.png';
 import ETH from './Icons/ETH.png';
@@ -61,9 +63,7 @@ function CryptoAPI() {
               {asset}: {exchangeRate} 
               <img src={picList[index]} alt={`${asset}`}/>
             </Item>
-            </Grid>
-            
-            
+            </Grid> 
           </Grid>
         ))}
       </Box>
