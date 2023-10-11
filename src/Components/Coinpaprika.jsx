@@ -52,18 +52,18 @@ function Coinpaprika() {
     <div className={`${styles.flexCenter}`}>
       <ul className={`${styles.boxWidth} ` }>
       <li className={` ${styles.flexCenter} `}>
-          <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>ICON</Typography>
-          <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>NAME</Typography>
-          <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>PRICE</Typography>
-          <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>MARKET SIZE</Typography>
+          <Typography className={` ${styles.tableTitleText} `}>ICON</Typography>
+          <Typography  className={` ${styles.tableTitleText} `}>NAME</Typography>
+          <Typography  className={` ${styles.tableTitleText} `}>PRICE</Typography>
+          <Typography className={` ${styles.tableTitleText} `}>MARKET SIZE</Typography>
         </li>
         <Divider variant="middle" />
         {portfolio.map((asset, index) => (
           <li key={index} className={`${styles.flexCenter} `}>
-            <Typography style={{fontSize: "2vw"}} dangerouslySetInnerHTML={{ __html: asset.icon }} className={` ${styles.tableText} `}/>
-            <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>{asset.name}</Typography>
-            <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>{asset.price}</Typography>
-            <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>{asset.marketSize}</Typography>
+            <Typography  dangerouslySetInnerHTML={{ __html: asset.icon }} className={` ${styles.tableText} `}/>
+            <Typography  className={` ${styles.tableText} `}>{asset.name}</Typography>
+            <Typography  className={` ${styles.tableText} `}>{asset.price}</Typography>
+            <Typography  className={` ${styles.tableText} `}>{asset.marketSize}</Typography>
           </li>
         ))}
       </ul>
