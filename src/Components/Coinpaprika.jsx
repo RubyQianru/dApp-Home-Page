@@ -35,8 +35,8 @@ function Coinpaprika() {
           return {
             icon: svg,
             name: assetName,
-            price: assetPrice,
-            marketSize: assetMarketSize
+            price: Math.round(assetPrice*100)/100,
+            marketSize: Math.round(assetMarketSize*100)/100
           };
         }); 
         setPortfolio(fetchedList)

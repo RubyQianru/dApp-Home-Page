@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../style';
 
-import BTC from './Icons/BTC.png';
-import DOGE from './Icons/DOGE.png';
-import ETH from './Icons/ETH.png';
-import PEPE from './Icons/PEPE.png';
-import XRP from './Icons/XRP.png';
+
 
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';

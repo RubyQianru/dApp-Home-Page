@@ -16,10 +16,13 @@ import MenuItem from '@mui/material/MenuItem';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+  
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [scrolling, setScrolling] = React.useState(false);
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -36,10 +39,28 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  // useEffect(() => {
+  //   // Add an event listener to detect scroll events
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 50) {
+  //       setScrolling(true);
+  //     } else {
+  //       setScrolling(false);
+  //     }
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll);
+
+  //   // Clean up the event listener when the component unmounts
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
+
   return (
     <AppBar position="fixed" 
     style={{ boxShadow: "initial", 
-        background:"none",
+        background:scrolling ? 'white': 'none',
         padding:"0 2.5rem",
         color:'white'}} >
       <Container maxWidth="100%"  style={{color:'white'}} >
@@ -121,6 +142,7 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
+                style={{color: 'white'}} 
                 sx={{ my: 2, 
                   display: 'block',
                   fontSize: '1.2rem',
@@ -134,7 +156,13 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box  className ={`${styles.flexSpaceX}`} style={{}}>
-            <Button variant="contained" size="large" className = {` ${styles.buttonColor}` }>LAUNCH APP</Button>
+            <Button variant="contained" 
+              style={{ fontSize:"2vw", padding:"0.8vw 2vw"}} 
+              className = {` ${styles.buttonColor}` }
+              sx={{
+                display: { xs: 'none', md: 'block' },
+              }}
+              >LAUNCH APP</Button>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
