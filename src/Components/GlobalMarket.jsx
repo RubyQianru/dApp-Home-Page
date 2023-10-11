@@ -34,7 +34,7 @@ function GlobalMarket() {
 
   return (
     <div className = {`${styles.paddingY}`}>
-      <Typography variant="h5" style={{fontSize:"3vw"}}>
+      <Typography variant="h5" style={{fontSize:"2vw"}}>
         Current Global Market Value:
       </Typography>
       <div className={`${styles.dataGradient}`} style={{fontSize:"10vw"}}>

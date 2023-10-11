@@ -90,6 +90,7 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
+              style={{color:scrolling?'black':'white'}}
             >
               <MenuIcon />
             </IconButton>
@@ -131,7 +132,7 @@ function ResponsiveAppBar() {
               fontWeight: 700,
               letterSpacing: '.3rem',
               textDecoration: 'none',
-              fontSize:"2.5rem",
+              fontSize:"2rem",
               color: scrolling ? 'black' : 'white'
             }}
           >
@@ -157,7 +158,7 @@ function ResponsiveAppBar() {
 
           <Box  className ={`${styles.flexSpaceX}`} style={{}}>
             <Button variant="contained" 
-              style={{ fontSize:"2vw", padding:"0.8vw 2vw"}} 
+              style={{ fontSize:"1svw", padding:"0.4vw 1vw"}} 
               className = {` ${styles.buttonColor}` }
               sx={{
                 display: { xs: 'none', md: 'block' },
