@@ -52,18 +52,18 @@ function Coinpaprika() {
     <div className={`${styles.flexCenter}`}>
       <ul className={`${styles.boxWidth} ` }>
       <li className={` ${styles.flexCenter} `}>
-          <Typography variant="h5" className={` ${styles.tableText} `}>ICON</Typography>
-          <Typography variant="h5" className={` ${styles.tableText} `}>NAME</Typography>
-          <Typography variant="h5" className={` ${styles.tableText} `}>PRICE</Typography>
-          <Typography variant="h5" className={` ${styles.tableText} `}>MARKET SIZE</Typography>
+          <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>ICON</Typography>
+          <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>NAME</Typography>
+          <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>PRICE</Typography>
+          <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>MARKET SIZE</Typography>
         </li>
         <Divider variant="middle" />
         {portfolio.map((asset, index) => (
           <li key={index} className={`${styles.flexCenter} `}>
-            <Typography variant="h6" dangerouslySetInnerHTML={{ __html: asset.icon }} className={` ${styles.tableText} `}/>
-            <Typography variant="h6" className={` ${styles.tableText} `}>{asset.name}</Typography>
-            <Typography variant="h6" className={` ${styles.tableText} `}>{asset.price}</Typography>
-            <Typography variant="h6" className={` ${styles.tableText} `}>{asset.marketSize}</Typography>
+            <Typography style={{fontSize: "2vw"}} dangerouslySetInnerHTML={{ __html: asset.icon }} className={` ${styles.tableText} `}/>
+            <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>{asset.name}</Typography>
+            <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>{asset.price}</Typography>
+            <Typography style={{fontSize: "2vw"}} className={` ${styles.tableText} `}>{asset.marketSize}</Typography>
           </li>
         ))}
       </ul>

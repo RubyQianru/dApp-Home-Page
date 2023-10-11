@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from '../style';
+import { useEffect } from 'react';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -23,7 +24,6 @@ function ResponsiveAppBar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [scrolling, setScrolling] = React.useState(false);
 
-
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -39,32 +39,32 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
-  // useEffect(() => {
-  //   // Add an event listener to detect scroll events
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 50) {
-  //       setScrolling(true);
-  //     } else {
-  //       setScrolling(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
 
-  //   window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-  //   // Clean up the event listener when the component unmounts
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <AppBar position="fixed" 
     style={{ boxShadow: "initial", 
         background:scrolling ? 'white': 'none',
         padding:"0 2.5rem",
-        color:'white'}} >
-      <Container maxWidth="100%"  style={{color:'white'}} >
-        <Toolbar disableGutters style={{color:'white'}} >
+        transition: 'background  0.5s, color 2s', 
+        color: scrolling ? 'black' : 'white',
+        }} >
+      <Container maxWidth="100%"  style={{color: scrolling ? 'black' : 'white'}} >
+        <Toolbar disableGutters style={{color: scrolling ? 'black' : 'white'}} >
           <Typography
             variant="h6"
             noWrap
@@ -132,7 +132,7 @@ function ResponsiveAppBar() {
               letterSpacing: '.3rem',
               textDecoration: 'none',
               fontSize:"2.5rem",
-              color:'white'
+              color: scrolling ? 'black' : 'white'
             }}
           >
             RUBY
@@ -142,7 +142,7 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                style={{color: 'white'}} 
+                style={{color: scrolling ? 'black' : 'white'}} 
                 sx={{ my: 2, 
                   display: 'block',
                   fontSize: '1.2rem',
