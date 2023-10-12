@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from '../style';
+import { useEffect } from 'react';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -16,10 +17,12 @@ import MenuItem from '@mui/material/MenuItem';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+  
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [scrolling, setScrolling] = React.useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -36,14 +39,32 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <AppBar position="fixed" 
     style={{ boxShadow: "initial", 
-        background:"none",
+        background:scrolling ? 'white': 'none',
         padding:"0 2.5rem",
-        color:'white'}} >
-      <Container maxWidth="100%"  style={{color:'white'}} >
-        <Toolbar disableGutters style={{color:'white'}} >
+        transition: 'background  0.5s, color 2s', 
+        color: scrolling ? 'black' : 'white',
+        }} >
+      <Container maxWidth="100%"  style={{color: scrolling ? 'black' : 'white'}} >
+        <Toolbar disableGutters style={{color: scrolling ? 'black' : 'white'}} >
           <Typography
             variant="h6"
             noWrap
@@ -69,6 +90,7 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
+              style={{color:scrolling?'black':'white'}}
             >
               <MenuIcon />
             </IconButton>
@@ -110,8 +132,8 @@ function ResponsiveAppBar() {
               fontWeight: 700,
               letterSpacing: '.3rem',
               textDecoration: 'none',
-              fontSize:"2.5rem",
-              color:'white'
+              fontSize:"2rem",
+              color: scrolling ? 'black' : 'white'
             }}
           >
             RUBY
@@ -121,6 +143,7 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
+                style={{color: scrolling ? 'black' : 'white'}} 
                 sx={{ my: 2, 
                   display: 'block',
                   fontSize: '1.2rem',
@@ -134,7 +157,13 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box  className ={`${styles.flexSpaceX}`} style={{}}>
-            <Button variant="contained" size="large" className = {` ${styles.buttonColor}` }>LAUNCH APP</Button>
+            <Button variant="contained" 
+              style={{ fontSize:"1svw", padding:"0.4vw 1vw"}} 
+              className = {` ${styles.buttonColor}` }
+              sx={{
+                display: { xs: 'none', md: 'block' },
+              }}
+              >LAUNCH APP</Button>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />

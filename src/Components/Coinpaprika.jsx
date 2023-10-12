@@ -34,8 +34,8 @@ function Coinpaprika() {
           return {
             icon: svg,
             name: assetName,
-            price: assetPrice,
-            marketSize: assetMarketSize
+            price: Math.round(assetPrice*100)/100,
+            marketSize: Math.round(assetMarketSize*100)/100
           };
         }); 
         setPortfolio(fetchedList)
@@ -51,18 +51,18 @@ function Coinpaprika() {
     <div className={`${styles.flexCenter}`}>
       <ul className={`${styles.boxWidth} ` }>
       <li className={` ${styles.flexCenter} `}>
-          <Typography variant="h5" className={` ${styles.tableText} `}>ICON</Typography>
-          <Typography variant="h5" className={` ${styles.tableText} `}>NAME</Typography>
-          <Typography variant="h5" className={` ${styles.tableText} `}>PRICE</Typography>
-          <Typography variant="h5" className={` ${styles.tableText} `}>MARKET SIZE</Typography>
+          <Typography className={` ${styles.tableTitleText} `}>ICON</Typography>
+          <Typography  className={` ${styles.tableTitleText} `}>NAME</Typography>
+          <Typography  className={` ${styles.tableTitleText} `}>PRICE</Typography>
+          <Typography className={` ${styles.tableTitleText} `}>MARKET SIZE</Typography>
         </li>
         <Divider variant="middle" />
         {portfolio.map((asset, index) => (
           <li key={index} className={`${styles.flexCenter} `}>
-            <Typography variant="h6" dangerouslySetInnerHTML={{ __html: asset.icon }} className={` ${styles.tableText} `}/>
-            <Typography variant="h6" className={` ${styles.tableText} `}>{asset.name}</Typography>
-            <Typography variant="h6" className={` ${styles.tableText} `}>{asset.price}</Typography>
-            <Typography variant="h6" className={` ${styles.tableText} `}>{asset.marketSize}</Typography>
+            <Typography  dangerouslySetInnerHTML={{ __html: asset.icon }} className={` ${styles.tableText} `}/>
+            <Typography  className={` ${styles.tableText} `}>{asset.name}</Typography>
+            <Typography  className={` ${styles.tableText} `}>{asset.price}</Typography>
+            <Typography  className={` ${styles.tableText} `}>{asset.marketSize}</Typography>
           </li>
         ))}
       </ul>

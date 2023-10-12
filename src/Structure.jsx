@@ -27,16 +27,16 @@ const Structure = () => {
         </div>
         <div className={` ${styles.flexStart} ${styles.flexColumn}` } style={{position: 'absolute', left:'45%'}}>
             <div className={`${styles.heroText}`}> 
-              <Typography variant="h3" gutterBottom style={{fontWeight: 'lighter'}}>
+              <Typography variant="h3" gutterBottom style={{fontWeight: 'lighter', fontSize:"4vw"}}>
                 DECENTRALIZATION PROTOCOL
               </Typography>
 
-              <Typography variant="h4" gutterBottom>
+              <Typography variant="h4" gutterBottom style={{fontSize: "2vw"}}>
               Communicate with Blockchain within a click
             </Typography>
             </div>
             <Button variant="contained" className={`${styles.buttonColor}`} 
-              style={{fontSize: '1.5rem', padding:"0.8rem 2rem"}}>
+              style={{fontSize: '2vw', padding:"0.8vw 2vw"}}>
               LAUNCH APP
             </Button>
         </div>

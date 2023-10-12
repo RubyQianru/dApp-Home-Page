@@ -4,12 +4,12 @@ const styles = {
     flexCenter: "flex justify-center items-center",
     flexStart: "flex justify-center items-start",
     flexEnd: "flex justify-center items-end",
-    flexColumn:"flex flex-col space-y-16",
-    flexSpaceX: "flex space-x-4",
+    flexColumn:"flex flex-col space-y-[2vw]",
+    flexSpaceX: "flex space-x-[2vw]",
     flexSpaceBetween: "flex justify-between",
 
     paddingX: "sm:px-0 px-0",
-    paddingY: "sm:py-12 py-4",
+    paddingY: "sm:py-12 py-[2vw]",
     padding: "sm:px-16 px-6 sm:py-12 py-4",
   
     marginX: "sm:mx-16 mx-6",
@@ -20,7 +20,8 @@ const styles = {
     bgGradient:"bg-gradient-to-b from-[#12100e] to-[#2b4162]",
 
     heroText:"text-white",
-    tableText:"w-[25%] flex justify-center py-4"
+    tableText:"w-[25%] flex justify-center py-4 text-[2vw]",
+    tableTitleText:"w-[25%] flex justify-center py-4 text-[3vw] font-bold"
     
 
   };
