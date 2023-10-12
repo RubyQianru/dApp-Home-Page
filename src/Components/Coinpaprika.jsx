@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 
 
-
 function Coinpaprika() {
   const [portfolio, setPortfolio] = useState([]);
 
