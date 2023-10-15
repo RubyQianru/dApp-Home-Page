@@ -77,10 +77,10 @@ function ResponsiveAppBar() {
               fontWeight: 700,
               letterSpacing: '.3rem',
               textDecoration: 'none',
-              fontSize: '2.5rem'
+              fontSize: '2rem'
             }}
           >
-            RUBY
+            AVALA
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }} >
@@ -136,7 +136,7 @@ function ResponsiveAppBar() {
               color: scrolling ? 'black' : 'white'
             }}
           >
-            RUBY
+            AVALA
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
