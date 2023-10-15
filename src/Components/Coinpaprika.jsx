@@ -2,8 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import styles from '../style';
 import IconSvg from './IconSvg';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import {addComma, nameCleanup} from './HelperFunctions';
 import { DataGrid } from '@mui/x-data-grid';
 
@@ -60,8 +58,8 @@ function Coinpaprika() {
       <div  dangerouslySetInnerHTML={{ __html: params.value}} />
     ), },
     { field: 'name', headerName: 'NAME',width:  200},
-    { field: 'price', headerName: 'PRICE', width: 200 },
-    { field: 'marketSize', headerName: 'MARKET SIZE', width: 200},
+    { field: 'price', headerName: 'PRICE', width: 200, renderCell: (params) => addComma(params.value) },
+    { field: 'marketSize', headerName: 'MARKET SIZE', width: 200, renderCell: (params) => addComma(params.value)},
   ];
 
   const rows = portfolio;
@@ -91,10 +89,9 @@ function Coinpaprika() {
         columns={columns}
         initialState={{
           pagination: {
-            paginationModel: { page: 0, pageSize: 5},
+            paginationModel: { page: 0, pageSize: 10},
           },
         }}
-        pageSizeOptions={[5, 10]}
       />
 
     </div>
