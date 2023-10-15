@@ -56,7 +56,9 @@ function Coinpaprika() {
   }, []);
 
   const columns = [
-    { field: 'icon', headerName: 'ICON', width: 100 },
+    { field: 'icon', headerName: 'ICON', width: 100, renderCell: (params) => (
+      <div  dangerouslySetInnerHTML={{ __html: params.value}} />
+    ), },
     { field: 'name', headerName: 'NAME',width:  200},
     { field: 'price', headerName: 'PRICE', width: 200 },
     { field: 'marketSize', headerName: 'MARKET SIZE', width: 200},
