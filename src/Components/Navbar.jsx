@@ -15,6 +15,16 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
+import { RadixDappToolkit, RadixNetwork } from '@radixdlt/radix-dapp-toolkit'
+
+const rdt = RadixDappToolkit({
+  dAppDefinitionAddress:
+    'account_tdx_e_128uml7z6mqqqtm035t83alawc3jkvap9sxavecs35ud3ct20jxxuhl',
+  networkId: RadixNetwork.RCnetV3,
+  applicationName: 'Radix Web3 dApp',
+  applicationVersion: '1.0.0',
+})
+
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
   
@@ -157,13 +167,13 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box  className ={`${styles.flexSpaceX}`} style={{}}>
-            <Button variant="contained" 
-              style={{ fontSize:"1svw", padding:"0.4vw 1vw"}} 
+            <radix-connect-button variant="contained" 
+              style={{ fontSize:"2vw", padding:"0.4vw 1vw"}} 
               className = {` ${styles.buttonColor}` }
               sx={{
                 display: { xs: 'none', md: 'block' },
               }}
-              >LAUNCH APP</Button>
+              ></radix-connect-button>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />

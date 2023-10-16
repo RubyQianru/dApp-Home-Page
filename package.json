@@ -18,6 +18,7 @@
     "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.11",
     "@mui/x-data-grid": "^6.16.1",
+    "@radixdlt/radix-dapp-toolkit": "^1.2.0",
     "@react-three/drei": "^9.84.2",
     "@react-three/fiber": "^8.14.2",
     "@types/three": "^0.156.0",
