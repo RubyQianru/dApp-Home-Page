@@ -2,9 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import styles from '../style';
 import IconSvg from './IconSvg';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-
+import {addComma, nameCleanup} from './HelperFunctions';
+import { DataGrid } from '@mui/x-data-grid';
 
 function Coinpaprika() {
   const [portfolio, setPortfolio] = useState([]);
@@ -12,7 +11,14 @@ function Coinpaprika() {
   useEffect(() => {
 
     async function fetchExchangeRates() {      
-      const assets = ['btc-bitcoin', 'eth-ethereum', 'usdt-tether', 'doge-dogecoin','sol-solana','xrp-xrp']
+      const assets = [
+        'btc-bitcoin', 
+        'eth-ethereum', 
+        'usdt-tether', 
+        'doge-dogecoin',
+        'sol-solana',
+        'xrp-XRP'
+      ]
 
       try {
         const promise = assets.map(asset =>{
@@ -27,11 +33,12 @@ function Coinpaprika() {
 
         const fetchedList = responses.map((response, index) => {
           const svg = IconSvg[assets[index]]
-          const assetName = response.data[0].base_currency_name
+          const assetName = nameCleanup(assets[index])
           const assetPrice = response.data[0].quotes.USD.price
           const assetMarketSize = response.data[0].quotes.USD.volume_24h
         
           return {
+            id: index,
             icon: svg,
             name: assetName,
             price: Math.round(assetPrice*100)/100,
@@ -43,29 +50,36 @@ function Coinpaprika() {
         console.error(error)
       }
     }
-
     fetchExchangeRates();
   }, []);
 
+  const columns = [
+    { field: 'icon', headerName: 'ICON', width: 100, renderCell: (params) => (
+      <div  dangerouslySetInnerHTML={{ __html: params.value}} />
+    ), },
+    { field: 'name', headerName: 'NAME',width:  200},
+    { field: 'price', headerName: 'PRICE', width: 200, renderCell: (params) => addComma(params.value) },
+    { field: 'marketSize', headerName: 'MARKET SIZE', width: 200, renderCell: (params) => addComma(params.value)},
+  ];
+
+  const rows = portfolio;
+
   return (
     <div className={`${styles.flexCenter}`}>
-      <ul className={`${styles.boxWidth} ` }>
-      <li className={` ${styles.flexCenter} `}>
-          <Typography className={` ${styles.tableTitleText} `}>ICON</Typography>
-          <Typography  className={` ${styles.tableTitleText} `}>NAME</Typography>
-          <Typography  className={` ${styles.tableTitleText} `}>PRICE</Typography>
-          <Typography className={` ${styles.tableTitleText} `}>MARKET SIZE</Typography>
-        </li>
-        <Divider variant="middle" />
-        {portfolio.map((asset, index) => (
-          <li key={index} className={`${styles.flexCenter} `}>
-            <Typography  dangerouslySetInnerHTML={{ __html: asset.icon }} className={` ${styles.tableText} `}/>
-            <Typography  className={` ${styles.tableText} `}>{asset.name}</Typography>
-            <Typography  className={` ${styles.tableText} `}>{asset.price}</Typography>
-            <Typography  className={` ${styles.tableText} `}>{asset.marketSize}</Typography>
-          </li>
-        ))}
-      </ul>
+
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        initialState={{
+          pagination: {
+            paginationModel: { page: 0, pageSize: 10},
+          },
+        }}
+        style={{
+          
+          fontSize: '1vw'
+        }}
+      />
 
     </div>
   );
