@@ -15,36 +15,65 @@ function Coinpaprika() {
         'btc-bitcoin', 
         'eth-ethereum', 
         'usdt-tether', 
-        'doge-dogecoin',
+        'xrp-XRP',
         'sol-solana',
-        'xrp-XRP'
+        'ada-cardano',
+        'doge-dogecoin',
+        'trx-tron',
+        'dai-dai',
+        'weth-weth',
+        'pepe-pepe'
       ]
 
       try {
         const promise = assets.map(asset =>{
           return axios.get(`https://coinpaprika1.p.rapidapi.com/coins/${asset}/markets`, {
             headers: {
-              'X-RapidAPI-Key': 'd25eb9279amshfda026b08d9a984p1ea465jsn603867ae7669',
+              'X-RapidAPI-Key': 'a484eec776msh455d9765b4f7a5cp1c5ad7jsn48589d43ba07',
               'X-RapidAPI-Host': 'coinpaprika1.p.rapidapi.com'
             }
           })
         })
-        const responses = await Promise.all(promise)
 
-        const fetchedList = responses.map((response, index) => {
+        const promise2 = assets.map(asset =>{
+          return axios.get(`https://coinpaprika1.p.rapidapi.com/coins/${asset}/ohlcv/latest`, {
+            headers: {
+              'X-RapidAPI-Key': 'a484eec776msh455d9765b4f7a5cp1c5ad7jsn48589d43ba07',
+              'X-RapidAPI-Host': 'coinpaprika1.p.rapidapi.com'
+            }
+          })
+        })
+
+        const [responses, responses2] = await Promise.all([Promise.all(promise), Promise.all(promise2)]);
+
+        console.log(responses2)
+
+        let fetchedList = responses.map((response, index) => {
           const svg = IconSvg[assets[index]]
           const assetName = nameCleanup(assets[index])
           const assetPrice = response.data[0].quotes.USD.price
-          const assetMarketSize = response.data[0].quotes.USD.volume_24h
-        
-          return {
+          const share = response.data[0].adjusted_volume_24h_share
+          const assetMarketSize = response.data[0].quotes.USD.volume_24h / (share/100)
+
+          const retObject = {
             id: index,
+            key: index,
             icon: svg,
             name: assetName,
             price: Math.round(assetPrice*100)/100,
-            marketSize: Math.round(assetMarketSize*100)/100
+            marketSize: Math.round(assetMarketSize*100)/100,
           };
+
+          if (responses2[index] && responses2[index].data) {
+            retObject.open = Math.round(responses2[index].data[0].open*100)/100
+            retObject.marketCap = Math.round(responses2[index].data[0].market_cap*100)/100
+          }
+        
+          return retObject;
         }); 
+
+        
+
         setPortfolio(fetchedList)
       } catch (error) {
         console.error(error)
@@ -59,13 +88,15 @@ function Coinpaprika() {
     ), },
     { field: 'name', headerName: 'NAME',width:  200},
     { field: 'price', headerName: 'PRICE', width: 200, renderCell: (params) => addComma(params.value) },
-    { field: 'marketSize', headerName: 'MARKET SIZE', width: 200, renderCell: (params) => addComma(params.value)},
+    { field: 'marketSize', headerName: '24H VOLUME', width: 200, renderCell: (params) => addComma(params.value)},
+    {field: 'open', headerName: 'OPEN', width: 200, renderCell: (params) => addComma(params.value)},
+    {feild: 'marketCap', headerName: 'MARKET CAP', width: 200, renderCell: (params) => addComma(params.value)}
   ];
 
   const rows = portfolio;
 
   return (
-    <div className={`${styles.flexCenter}`}>
+    <div className={`${styles.flexCenter}`} >
 
       <DataGrid
         rows={rows}
@@ -76,7 +107,6 @@ function Coinpaprika() {
           },
         }}
         style={{
-          
           fontSize: '1vw'
         }}
       />

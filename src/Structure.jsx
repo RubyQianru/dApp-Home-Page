@@ -44,12 +44,12 @@ const Structure = () => {
       </div>
 
       <div className={` ${styles.paddingX} ${styles.flexStart}` }>
-        <div className={`${styles.boxWidth}` }>
+        <div className={`` }>
           <GlobalMarket/>       
         </div>
       </div>
 
-      <div className = {``}>
+      <div className = {` ${styles.flexCenter}`}>
         <Coinpaprika/>
       </div>
 
