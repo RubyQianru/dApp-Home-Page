@@ -10,17 +10,7 @@ const rdt = RadixDappToolkit({
 })
 
 function RadixButton() {
-    // rdt.walletApi.provideChallengeGenerator(requestChallengeFromDappBackendFn)
-
-    // rdt.walletApi.setRequestData(DataRequestBuilder.persona.withProof())
-
-    // // handle the wallet response
-    // rdt.walletApi.dataRequestControl(async (walletData) => {
-    // const personaProof = walletData.proofs.find(
-    //     (proof) => proof.type === 'persona'
-    // )
-    // if (personaProof) await handleLogin(personaProof)
-    // })
+    
   
     return (
       <radix-connect-button />

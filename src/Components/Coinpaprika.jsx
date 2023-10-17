@@ -35,18 +35,18 @@ function Coinpaprika() {
           })
         })
 
-        const promise2 = assets.map(asset =>{
-          return axios.get(`https://coinpaprika1.p.rapidapi.com/coins/${asset}/ohlcv/latest`, {
-            headers: {
-              'X-RapidAPI-Key': 'a484eec776msh455d9765b4f7a5cp1c5ad7jsn48589d43ba07',
-              'X-RapidAPI-Host': 'coinpaprika1.p.rapidapi.com'
-            }
-          })
-        })
+        // const promise2 = assets.map(asset =>{
+        //   return axios.get(`https://coinpaprika1.p.rapidapi.com/coins/${asset}/ohlcv/latest`, {
+        //     headers: {
+        //       'X-RapidAPI-Key': 'a484eec776msh455d9765b4f7a5cp1c5ad7jsn48589d43ba07',
+        //       'X-RapidAPI-Host': 'coinpaprika1.p.rapidapi.com'
+        //     }
+        //   })
+        // })
 
-        const [responses, responses2] = await Promise.all([Promise.all(promise), Promise.all(promise2)]);
+        const [responses] = await Promise.all(promise);
 
-        console.log(responses2)
+        // console.log(responses2)
 
         let fetchedList = responses.map((response, index) => {
           const svg = IconSvg[assets[index]]
@@ -64,10 +64,10 @@ function Coinpaprika() {
             marketSize: Math.round(assetMarketSize*100)/100,
           };
 
-          if (responses2[index] && responses2[index].data) {
-            retObject.open = Math.round(responses2[index].data[0].open*100)/100
-            retObject.marketCap = Math.round(responses2[index].data[0].market_cap*100)/100
-          }
+          // if (responses2[index] && responses2[index].data) {
+          //   retObject.open = Math.round(responses2[index].data[0].open*100)/100
+          //   retObject.marketCap = Math.round(responses2[index].data[0].market_cap*100)/100
+          // }
         
           return retObject;
         }); 
@@ -83,14 +83,12 @@ function Coinpaprika() {
   }, []);
 
   const columns = [
-    { field: 'icon', headerName: 'ICON', width: 100, renderCell: (params) => (
+    { field: 'icon', headerName: 'ICON', width: 200, renderCell: (params) => (
       <div  dangerouslySetInnerHTML={{ __html: params.value}} />
     ), },
-    { field: 'name', headerName: 'NAME',width:  200},
-    { field: 'price', headerName: 'PRICE', width: 200, renderCell: (params) => addComma(params.value) },
-    { field: 'marketSize', headerName: '24H VOLUME', width: 200, renderCell: (params) => addComma(params.value)},
-    {field: 'open', headerName: 'OPEN', width: 200, renderCell: (params) => addComma(params.value)},
-    {feild: 'marketCap', headerName: 'MARKET CAP', width: 200, renderCell: (params) => addComma(params.value)}
+    { field: 'name', headerName: 'NAME',width:  300},
+    { field: 'price', headerName: 'PRICE', width: 300, renderCell: (params) => addComma(params.value) },
+    { field: 'marketSize', headerName: '24H VOLUME', width: 300, renderCell: (params) => addComma(params.value)},
   ];
 
   const rows = portfolio;
