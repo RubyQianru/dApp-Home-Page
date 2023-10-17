@@ -44,7 +44,7 @@ function Coinpaprika() {
         //   })
         // })
 
-        const [responses] = await Promise.all(promise);
+        const responses = await Promise.all(promise);
 
         // console.log(responses2)
 
@@ -71,9 +71,6 @@ function Coinpaprika() {
         
           return retObject;
         }); 
-
-        
-
         setPortfolio(fetchedList)
       } catch (error) {
         console.error(error)

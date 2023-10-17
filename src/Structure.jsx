@@ -4,12 +4,8 @@ import Button from '@mui/material/Button';
 import ResponsiveAppBar from './Components/Navbar';
 import StickyFooter from './Components/StickyFooter';
 import Hero3D from './Components/hero3D';
-import CryptoAPI from './Components/CryptoAPI';
-
 import Coinpaprika from './Components/Coinpaprika';
-import DataTable from './Components/DataTable';
 import GlobalMarket from './Components/GlobalMarket';
-
 import Typography from '@mui/material/Typography';
 
 
@@ -54,11 +50,6 @@ const Structure = () => {
       </div>
 
       <br />
-
-      {/* <div className = {``}>
-        <DataTable/>
-      </div> */}
-
       
 
       <div className = {``}>
