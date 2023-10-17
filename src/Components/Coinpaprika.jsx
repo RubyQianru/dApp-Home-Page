@@ -60,8 +60,8 @@ function Coinpaprika() {
             key: index,
             icon: svg,
             name: assetName,
-            price: Math.round(assetPrice*100)/100,
-            marketSize: Math.round(assetMarketSize*100)/100,
+            price: Math.round(assetPrice*100.00)/100.00,
+            marketSize: Math.round(assetMarketSize*100.00)/100.00,
           };
 
           // if (responses2[index] && responses2[index].data) {
@@ -101,9 +101,7 @@ function Coinpaprika() {
             paginationModel: { page: 0, pageSize: 10},
           },
         }}
-        style={{
-          fontSize: '1vw'
-        }}
+        
       />
 
     </div>

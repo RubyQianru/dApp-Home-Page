@@ -29,7 +29,7 @@
     "express": "^4.18.2",
     "lamina": "^1.1.23",
     "mongodb": "^6.1.0",
-    "mongoose": "^7.6.2",
+    "mongoose": "^7.6.3",
     "node-coinmarketcap-api": "^1.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
