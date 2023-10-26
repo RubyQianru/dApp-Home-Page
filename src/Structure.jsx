@@ -8,6 +8,8 @@ import Coinpaprika from './Components/Coinpaprika';
 import GlobalMarket from './Components/GlobalMarket';
 import Typography from '@mui/material/Typography';
 
+import { Route, Routes } from "react-router-dom";
+import RecordList from "./Components/RecordList";
 
 
 const Structure = () => {
@@ -50,6 +52,10 @@ const Structure = () => {
       </div>
 
       <br />
+
+      <Routes>
+       <Route exact path="/" element={<RecordList />} />
+     </Routes>
       
 
       <div className = {``}>

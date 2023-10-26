@@ -60,8 +60,8 @@ function Coinpaprika() {
             key: index,
             icon: svg,
             name: assetName,
-            price: Math.round(assetPrice*100.00)/100.00,
-            marketSize: Math.round(assetMarketSize*100.00)/100.00,
+            price: (assetPrice).toFixed(2),
+            marketSize: (assetMarketSize).toFixed(2),
           };
 
           // if (responses2[index] && responses2[index].data) {
