@@ -12,6 +12,12 @@ import { Route, Routes } from "react-router-dom";
 import RecordList from "./Components/RecordList";
 import Edit from "./Components/Edit";
 import Create from "./Components/Create";
+import Navbar from './Components/NavRecord';
+
+import Test from './Components/Test';
+
+import Card from './Components/Card';
+
 
 const Structure = () => {
   return (
@@ -53,12 +59,18 @@ const Structure = () => {
       </div>
 
       <br />
+      <Navbar/>
+      <Test/>
      <div className = {` ${styles.flexCenter}`}>
         <Routes>
           <Route exact path="/" element={<RecordList />} />
           <Route path="/edit/:id" element={<Edit />} />
           <Route path="/create" element={<Create />} />
         </Routes>
+      </div>
+      
+      <div className = {` ${styles.flexCenter}`}>
+        <Card />
       </div>
       
 
