@@ -6,13 +6,13 @@
 }
 
 :root {
-  --card-height: 65vh;
-  --card-width: calc(var(--card-height));
+  --card-height: calc(var(--card-width)*1.25);
+  --card-width: 30vw;
 }
 
 
 .background {
-
+  height: var(--card-height);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -22,7 +22,6 @@
 }
 
 .card {
-
     width: var(--card-width);
     height: var(--card-height);
     padding: 3px;
@@ -46,8 +45,7 @@
     animation: none;
     opacity: 0;
   }
-  
-  
+   
   .card::before {
     content: "";
     width: 104%;
@@ -55,12 +53,12 @@
     border-radius: 8px;
     background-image: linear-gradient(
       var(--rotate)
-      , indigo, purple, pink);
+      , #3f51b5, #9c27b0, #e91e63);
       position: absolute;
       z-index: -1;
       top: -1%;
       left: -2%;
-      animation: spin 2.5s linear infinite;
+      animation: spin 8s linear infinite;
   }
   
   .card::after {
@@ -77,10 +75,10 @@
     filter: blur(calc(var(--card-height) / 6));
     background-image: linear-gradient(
       var(--rotate)
-      , indigo, purple, pink);
+      , #3f51b5, #9c27b0, #e91e63);
       opacity: 1;
     transition: opacity .5s;
-    animation: spin 2.5s linear infinite;
+    animation: spin 8s linear infinite;
   }
   
   @keyframes spin {
@@ -98,4 +96,24 @@
     font-family: sans-serif;
     font-weight: bold;
     margin-top: 2rem;
+  }
+
+  .gradientText{
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      var(--rotate)
+      , #3f51b5, #9c27b0, #e91e63);
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 8s linear infinite;
+    height: 100%;
+    width: 100%;  
+    display: inline-block;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 96px;
+    font-weight: bold;
   }

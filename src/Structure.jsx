@@ -27,7 +27,7 @@ const Structure = () => {
           <ResponsiveAppBar/>
       </div>
 
-      <div className={` ${styles.flexCenter} ${styles.bgGradient}` } style={{position:'relative', padding: '30px 0'}}>
+      <div className={` ${styles.flexCenter} ${styles.bgGradient}` } style={{position:'relative', padding: '30px 0'}} >
         <div className={``} style={{position:'relative'}}>
           <Hero3D/>
         </div>
@@ -68,7 +68,7 @@ const Structure = () => {
           <Route path="/create" element={<Create />} />
         </Routes>
       </div>
-      
+
       <div className = {` ${styles.flexCenter}`}>
         <Card />
       </div>

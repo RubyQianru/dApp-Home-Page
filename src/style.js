@@ -16,8 +16,8 @@ const styles = {
     marginY: "sm:my-16 my-6",
 
     buttonColor: "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500",
-    dataGradient: "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline-block text-transparent bg-clip-text text-[96px] font-bold",
     bgGradient:"bg-gradient-to-b from-[#12100e] to-[#2b4162]",
+
 
     heroText:"text-white",
     tableText:"w-[25%] flex justify-center py-4 text-[2vw]",

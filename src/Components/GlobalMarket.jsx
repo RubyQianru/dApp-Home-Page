@@ -4,6 +4,9 @@ import styles from '../style';
 import Typography from '@mui/material/Typography';
 import { addComma } from './HelperFunctions';
 
+import "./Card.css"
+import { Gradient } from 'lamina';
+
 
 function GlobalMarket() {
   const [volume, setVolume] = useState(0);
@@ -37,13 +40,17 @@ function GlobalMarket() {
   }, []);
 
   return (
-    <div className = {`${styles.paddingY}`}>
+    
+    <div className = {`${styles.paddingY} `} >
+      {/* <div className = {` gradient`} ></div> */}
       <Typography variant="h5" style={{fontSize:"2vw"}}>
         Current Global Market Value:
       </Typography>
-      <div className={`${styles.dataGradient}`} style={{fontSize:"10vw"}}>
-        ${volume}
-      </div>
+        <div className={` gradientText`} style={{fontSize:"10vw"}}>
+          ${volume}
+        </div>
+
+
     </div>
     
 
