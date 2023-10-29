@@ -7,7 +7,7 @@ const styles = {
     flexColumn:"flex flex-col space-y-[2vw]",
     flexSpaceX: "flex space-x-[2vw]",
     flexSpaceBetween: "flex justify-between",
-
+    
     paddingX: "sm:px-0 px-0",
     paddingY: "sm:py-12 py-[2vw]",
     padding: "sm:px-16 px-6 sm:py-12 py-4",

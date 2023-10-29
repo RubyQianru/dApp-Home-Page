@@ -12,7 +12,7 @@ let _db;
 export async function connectToServer(callback) {
   try {
     await client.connect();
-    _db = client.db("record");
+    _db = client.db("Blog");
     console.log("Successfully connected to MongoDB.");
     return callback(null);
   } catch (err) {

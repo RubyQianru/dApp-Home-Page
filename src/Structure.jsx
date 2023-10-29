@@ -8,10 +8,9 @@ import Coinpaprika from './Components/Coinpaprika';
 import GlobalMarket from './Components/GlobalMarket';
 import Typography from '@mui/material/Typography';
 
-import { Route, Routes } from "react-router-dom";
-import RecordList from "./Components/RecordList";
 
 import Card from './Components/Card';
+import Forum from './Components/Forum/Forum';
 
 
 const Structure = () => {
@@ -54,12 +53,10 @@ const Structure = () => {
       </div>
 
       <br />
+      <br />
 
-
-     <div className = {` ${styles.flexCenter}`}>
-        <Routes>
-          <Route exact path="/" element={<RecordList />} />
-        </Routes>
+      <div className={`${styles.flexCenter}`}>
+        <Forum/>
       </div>
 
       <div className = {` ${styles.flexCenter}`}>
