@@ -18,7 +18,7 @@ import RadixButton from './RadixButton';
 
 
 
-const pages = [];
+const pages = ['Community'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
   
 

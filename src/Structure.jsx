@@ -3,14 +3,14 @@ import styles from './style';
 import Button from '@mui/material/Button';
 import ResponsiveAppBar from './Components/Navbar';
 import StickyFooter from './Components/StickyFooter';
-import Hero3D from './Components/Hero3D';
-import Coinpaprika from './Components/Coinpaprika';
-import GlobalMarket from './Components/GlobalMarket';
+import Hero3D from './Components/Index/Hero3D';
+import Coinpaprika from './Components/Index/Coinpaprika';
+import GlobalMarket from './Components/Index/GlobalMarket';
 import Typography from '@mui/material/Typography';
 
 
-import Card from './Components/Card';
-import Forum from './Components/Forum/Forum';
+import Card from './Components/Index/Card';
+import Forum from './Components/Community/Forum/Forum';
 
 
 const Structure = () => {
@@ -28,7 +28,7 @@ const Structure = () => {
         <div className={` ${styles.flexStart} ${styles.flexColumn}` } style={{position: 'absolute', left:'45%'}}>
             <div className={`${styles.heroText}`}> 
               <Typography variant="h3" gutterBottom style={{fontWeight: 'lighter', fontSize:"4vw"}}>
-                DECENTRALIZATION PROTOCOL
+                AVALA
               </Typography>
 
               <Typography variant="h4" gutterBottom style={{fontSize: "2vw"}}>
@@ -54,14 +54,6 @@ const Structure = () => {
 
       <br />
       <br />
-
-      <div className={`${styles.flexCenter}`}>
-        <Forum/>
-      </div>
-
-      <div className = {` ${styles.flexCenter}`}>
-        <Card />
-      </div>
       
 
       <div className = {``}>

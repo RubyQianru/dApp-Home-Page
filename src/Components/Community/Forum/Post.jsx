@@ -2,7 +2,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from "react-router";
 import React, { useState, useEffect } from "react";
-import styles from '../../style';
+import styles from '../../../style';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
