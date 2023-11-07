@@ -18,10 +18,7 @@ import RadixButton from './RadixButton';
 
 import { Link } from 'react-router-dom';
 
-
-
-
-const pages = ['Community'];
+const pages = ['Community', 'NFT'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
   
 
