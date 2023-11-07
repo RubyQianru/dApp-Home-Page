@@ -4,7 +4,8 @@ import Button from '@mui/material/Button';
 import ResponsiveAppBar from '../Navbar';
 import StickyFooter from '../StickyFooter';
 import Typography from '@mui/material/Typography';
-import Forum from './Forum/Forum';
+
+import Opensea from './Opensea';
 
 
 
@@ -16,10 +17,16 @@ const NFT = () => {
           <ResponsiveAppBar/>
       </div>
 
+      <div className = {` ${styles.flexCenter} `} >
+          <Opensea/>
+      </div>
+
 
       <div className = {``}>
         <StickyFooter/>  
       </div>
+
+
 
     </div>
   )
