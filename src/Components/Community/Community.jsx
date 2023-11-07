@@ -12,16 +12,13 @@ const Community = () => {
   return (
     <div className = "w-full overflow-hidden" >
 
-      <div className = {` ${styles.flexCenter} `} >
+      <div className = {` ${styles.flexCenter} `} style={{color:"black"}}>
           <ResponsiveAppBar/>
       </div>
 
-
-
-      <div className={`${styles.flexCenter}`} style={{position:'relative', padding: '30px 0'}}>
+      <div className={`${styles.flexCenter}`} style={{position:'relative', top: '100px'}}>
         <Forum/>
       </div>
-
 
       <div className = {``}>
         <StickyFooter/>  

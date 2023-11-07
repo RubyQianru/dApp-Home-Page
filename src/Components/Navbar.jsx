@@ -16,6 +16,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import RadixButton from './RadixButton';
 
+import { Link } from 'react-router-dom';
+
+
 
 
 const pages = ['Community'];
@@ -117,7 +120,9 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link to={`/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -146,6 +151,7 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
+
                 style={{color: scrolling ? 'black' : 'white'}} 
                 sx={{ my: 2, 
                   display: 'block',
@@ -154,7 +160,9 @@ function ResponsiveAppBar() {
                   color:'white'
                   }}
               >
-                {page}
+                <Link to={`/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </Link>
               </Button>
             ))}
           </Box>
