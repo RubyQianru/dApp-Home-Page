@@ -3,7 +3,7 @@ import styles from './style';
 import Button from '@mui/material/Button';
 import ResponsiveAppBar from './Components/Navbar';
 import StickyFooter from './Components/StickyFooter';
-import Hero3D from './Components/hero3D';
+import Hero3D from './Components/Hero3D';
 import Coinpaprika from './Components/Coinpaprika';
 import GlobalMarket from './Components/GlobalMarket';
 import Typography from '@mui/material/Typography';
