@@ -12,38 +12,44 @@ import CardContent from '@mui/material/CardContent';
 function Post() {
     const [formVisible, setFormVisible] = useState(false); // State to control form visibility
 
-    const [form, setForm] = useState({
-        title: "",
-        user: "",
-        content: "",
-    });
+    // const [form, setForm] = useState({
+    //     title: "",
+    //     user: "",
+    //     content: "",
+    // });
+
+    const [title, setTitle] = useState("")
+    const [user, setUser] = useState("")
+    const [content, setContent] = useState("")
 
     const navigate = useNavigate();
 
-    function updateForm(value) {
-        return setForm((prev) => {
-            return { ...prev, ...value };
-        });
-    }
+    // function updateForm(value) {
+    //     return setForm((prev) => {
+    //         return { ...prev, ...value };
+    //     });
+    // }
 
     async function onSubmit(e) {
         e.preventDefault();
+        const newContent = {title, user, content};
 
-        const newPerson = { ...form };
+        setTitle("")
+        setUser("")
+        setContent("")
+
         await fetch("http://localhost:5050/record/add", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(newPerson),
+            body: JSON.stringify(newContent),
         })
         .catch(error => {
-            window.alert(error);
-            return;
+            console.error("Fetch error:", error);
         });
-
-        setForm({ title: "", user: "", content: "" });
-        navigate("/");
+        
+        // navigate("/");
     }
 
     // Function to toggle the form visibility
@@ -77,19 +83,19 @@ function Post() {
                             <CardContent>
                         <div className={`${styles.flexSpaceX} `}> 
                             <TextField id="outlined-basic" label="Title" variant="outlined" 
-                                value={form.title}
-                                onChange={(e) => updateForm({ title: e.target.value })}
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
                                 />
                             <TextField id="outlined-basic" label="User" variant="outlined" 
-                                value={form.user}
-                                onChange={(e) => updateForm({ user: e.target.value })}
+                                value={user}
+                                onChange={(e) => setUser(e.target.value)}
                                 />
                         </div>
                         <br />
                         <div>
                             <TextField fullWidth id="fullwidth" label="Content" variant="standard" 
-                                value={form.content}
-                                onChange={(e) => updateForm({ content: e.target.value })}
+                                value={content}
+                                onChange={(e) => setContent(e.target.value)}
                             />
 
                         </div>
