@@ -42,7 +42,6 @@ function Opensea() {
 
   return (
     <div className={`${styles.flexCenter}`} >
-
         <div className="gallery">
             {gallery.map((image, index) => (
                 <img key={index} src={image.image_url} alt={`Image ${index}`} />
