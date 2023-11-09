@@ -1,7 +1,7 @@
 import { useState, useTransition, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Center, Environment, OrbitControls } from '@react-three/drei' 
-import { Model } from '../Scene'
+import { Model } from './Scene'
 import * as THREE from 'three'
 
 export default function Hero3D() {
