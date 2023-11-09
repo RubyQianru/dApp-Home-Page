@@ -2,55 +2,36 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF("/pepe_head.gltf");
+  const { nodes, materials } = useGLTF("/Smug Pepe High Poly.glb");
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} scale={1.5}>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Object_4.geometry}
-        material={materials["Material.001"]}
-        position={[-0.006, 0.01, 0.386]}
-        scale={0.118}
+        geometry={nodes.Smug_Pepe_Body_HQ.geometry}
+        material={materials.Smug_Pepe_Body}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.01}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Object_6.geometry}
-        material={materials.Material}
-        position={[0.122, 0.128, 0.353]}
-        rotation={[1.571, 0, 3.058]}
-        scale={0.097}
+        geometry={nodes.Smug_Pepe_Eyes_HQ.geometry}
+        material={materials.Pepe_Eyes}
+        position={[-0.344, 0.458, 0.411]}
+        rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Object_8.geometry}
-        material={materials.Material}
-        position={[-0.112, 0.13, 0.353]}
-        rotation={[1.571, 0, 3.058]}
-        scale={0.097}
+        geometry={nodes.Smug_Pepe_Hand_HQ.geometry}
+        material={materials.Smug_Pepe_Body}
+        position={[0.409, -0.481, 0.638]}
+        rotation={[1.8, 0.092, -0.066]}
+        scale={0.01}
       />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_10.geometry}
-        material={materials["Material.002"]}
-        position={[0, 0, 0.01]}
-      >
-
-      </mesh>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_12.geometry}
-      >
-        <meshStandardMaterial color="#20672c" />
-      </mesh>
-
     </group>
-
   );
 }
 
-useGLTF.preload("/pepe_head.gltf");
+useGLTF.preload("/Smug Pepe High Poly.glb");
