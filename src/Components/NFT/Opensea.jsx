@@ -11,7 +11,7 @@ function Opensea() {
     async function fetchNFT() {      
 
       try {
-        const promise =  axios.get(`https://api.opensea.io/api/v2/chain/ethereum/account/0x31a5Ff62A1B2C0f030AeE1661eAB6513ae676e23/nfts`, {
+        const promise =  axios.get(`https://api.opensea.io/api/v2/chain/ethereum/account/0x850cAE094cE34C564327818631287A75d3CEe6CA/nfts`, {
             headers: {
                 accept: 'application/json', 
                 'x-api-key': 'dbade0c9e3364cf29487e74831a52337'
