@@ -6,15 +6,17 @@ import StickyFooter from '../StickyFooter';
 import Typography from '@mui/material/Typography';
 
 import Opensea from './Opensea';
-
-
-
+import Test from './Test';
 const NFT = () => {
   return (
     <div className = "w-full overflow-hidden" >
 
       <div className = {` ${styles.flexCenter} `} style={{color:"black"}}>
           <ResponsiveAppBar/>
+      </div>
+
+      <div className = {` ${styles.flexCenter} `} >
+          <Test/>
       </div>
 
       <div className = {` ${styles.flexCenter} `} >

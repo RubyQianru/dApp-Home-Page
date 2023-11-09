@@ -9,7 +9,7 @@ import getUuid from 'uuid-by-string'
 const GOLDENRATIO = 1.61803398875
 
 export const Gallery = ({ images }) => (
-  <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }}>
+  <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }} style={{height: "60vw"}}>
     <color attach="background" args={['#191920']} />
     <fog attach="fog" args={['#191920', 0, 15]} />
     <group position={[0, -0.5, 0]}>

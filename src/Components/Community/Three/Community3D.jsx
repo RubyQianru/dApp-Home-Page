@@ -33,7 +33,7 @@ const Community3D = () => {
       onMouseLeave={handleMouseLeave}
     >
       <pointLight position={[10, 10, 10]} />
-      <ambientLight intensity={5} />
+      <ambientLight intensity={4} />
       <directionalLight color="green" position={[0, 0, 0]} />
 
       <mesh ref={meshRef} rotation={[rotation.x, rotation.y, 0]}>
