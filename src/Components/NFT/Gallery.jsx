@@ -30,7 +30,7 @@ export const Gallery = ({ images }) => (
         />
       </mesh>
     </group>
-    <Environment preset="city" />
+    <Environment preset="sunset" />
   </Canvas>
 )
 
@@ -87,12 +87,12 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
         scale={[1, GOLDENRATIO, 0.05]}
         position={[0, GOLDENRATIO / 2, 0]}>
         <boxGeometry />
-        <meshStandardMaterial color="#151515" metalness={0.5} roughness={0.5} envMapIntensity={2} />
+        <meshStandardMaterial color="white" metalness={1} roughness={0.5} envMapIntensity={2} />
         <mesh ref={frame} raycast={() => null} scale={[0.9, 0.93, 0.9]} position={[0, 0, 0.2]}>
           <boxGeometry />
           <meshBasicMaterial toneMapped={false} fog={false} />
         </mesh>
-        <Image raycast={() => null} ref={image} position={[0, 0, 0.7]} url={url} />
+        <Image raycast={() => null} ref={image} position={[0, 0, 0.8]} url={url} />
       </mesh>
       <Text maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.025}>
         {name.split('-').join(' ')}
