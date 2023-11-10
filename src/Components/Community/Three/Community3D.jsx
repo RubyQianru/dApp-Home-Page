@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Center, Environment, OrbitControls } from '@react-three/drei';
 import { Model } from './Model';
+import { SoftShadows } from "@react-three/drei"
 
 const Community3D = () => {
   const meshRef = useRef();
@@ -32,13 +33,28 @@ const Community3D = () => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <pointLight position={[10, 10, 10]} intensity={4}/>
-      <ambientLight intensity={1} />
-      <directionalLight color="green" position={[0, 0, 0]} intensity={4}/>
+      <SoftShadows size={25} focus={1} samples={10}/>
 
-      <mesh ref={meshRef} rotation={[rotation.x, rotation.y, 0]}>
-        <Model scale={[1, 1, 1]} />
-      </mesh>
+      {/* <fog attach="fog" args={["white", 0, 9]} /> */}
+
+      <ambientLight intensity={1.5} />
+      <directionalLight castShadow position={[2.5, 8, 5]} intensity={1.5} shadow-mapSize={1024}>
+        <orthographicCamera attach="shadow-camera" args={[-10, 10, -10, 10, 0.1, 50]} />
+      </directionalLight>
+      <pointLight position={[-10, 0, -20]} color="white" intensity={1} />
+      <pointLight position={[0, -10, 0]} intensity={1} />
+
+      <group>
+        <mesh ref={meshRef} rotation={[rotation.x, rotation.y, 0]} position={[0, 0, 0]}>
+          <Model scale={[1, 1, 1]} />
+        </mesh>
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 0]} receiveShadow>
+          <planeGeometry args={[100, 100]} />
+          <shadowMaterial transparent opacity={0.4} />
+        </mesh>
+      </group>
+
+      
 
       <OrbitControls
         autoRotate={false}

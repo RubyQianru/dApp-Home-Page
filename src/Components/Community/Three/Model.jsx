@@ -25,11 +25,10 @@ export function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.Smug_Pepe_Hand_HQ.geometry}
-        material={materials.Smug_Pepe_Body}
         position={[0.409, -0.481, 0.638]}
         rotation={[1.8, 0.092, -0.066]}
         scale={0.01}
-      />
+      ><meshPhongMaterial color={"#577f38"}/></mesh>
     </group>
   );
 }
