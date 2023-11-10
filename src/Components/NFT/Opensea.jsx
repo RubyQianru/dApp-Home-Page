@@ -41,23 +41,7 @@ function Opensea() {
     fetchNFT();
   }, []);
 
-  // const images = [
-  //   // Front
-  //   // { position: [0, 0, 1.5], rotation: [0, 0, 0], url: pexel(1103970) },
-  //   // Back
-  //   { position: [-0.7, 0, -0.6], rotation: [0, 0, 0], url: gallery[0].image_url },
-  //   { position: [0.7, 0, -0.6], rotation: [0, 0, 0], url: gallery[1].image_url },
-  //   // Left
-  //   { position: [-1.75, 0, 0.25], rotation: [0, Math.PI / 2.5, 0], url: gallery[2].image_url },
-  //   { position: [-2.15, 0, 1.5], rotation: [0, Math.PI / 2.5, 0], url: gallery[3].image_url },
-  //   { position: [-2.55, 0, 2.75], rotation: [0, Math.PI / 2.5, 0], url: gallery[4].image_url },
-  //   // Right
-  //   { position: [1.75, 0, 0.25], rotation: [0, -Math.PI / 2.5, 0], url: gallery[5].image_url},
-  //   { position: [2.15, 0, 1.5], rotation: [0, -Math.PI / 2.5, 0], url: gallery[6].image_url },
-  //   { position: [2.55, 0, 2.75], rotation: [0, -Math.PI / 2.5, 0], url: gallery[7].image_url}
-  // ]
 
-  // Update the images array whenever the gallery state changes
   const images = gallery.map((item, index) => {
     let position;
     let rotation = [0,0,0];

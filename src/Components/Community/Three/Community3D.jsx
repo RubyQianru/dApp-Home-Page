@@ -32,9 +32,9 @@ const Community3D = () => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <pointLight position={[10, 10, 10]} />
-      <ambientLight intensity={4} />
-      <directionalLight color="green" position={[0, 0, 0]} />
+      <pointLight position={[10, 10, 10]} intensity={4}/>
+      <ambientLight intensity={1} />
+      <directionalLight color="green" position={[0, 0, 0]} intensity={4}/>
 
       <mesh ref={meshRef} rotation={[rotation.x, rotation.y, 0]}>
         <Model scale={[1, 1, 1]} />
