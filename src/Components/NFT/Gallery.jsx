@@ -10,24 +10,24 @@ const GOLDENRATIO = 1.61803398875
 
 export const Gallery = ({ images }) => (
   <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }} style={{height: "60vw"}}>
-    <color attach="background" args={['#191920']} />
-    <fog attach="fog" args={['#191920', 0, 15]} />
+    <color attach="background" args={['#white']} />
+    <fog attach="fog" args={['#white', 0, 15]} />
     <group position={[0, -0.5, 0]}>
       <Frames images={images} />
       <mesh rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[50, 50]} />
-        <meshStandardMaterial
+        {/* <MeshReflectorMaterial
           blur={[300, 100]}
           resolution={2048}
           mixBlur={1}
           mixStrength={80}
-          roughness={1}
+          roughness={0}
           depthScale={1.2}
           minDepthThreshold={0.4}
           maxDepthThreshold={1.4}
           color="#050505"
-          metalness={0.5}
-        />
+          metalness={1}
+        /> */}
       </mesh>
     </group>
     <Environment preset="sunset" />
@@ -74,9 +74,9 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
   const isActive = params?.id === name
   useCursor(hovered)
   useFrame((state, dt) => {
-    image.current.material.zoom = 2 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) / 2
+    image.current.material.zoom = 1.5 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) / 3
     easing.damp3(image.current.scale, [0.85 * (!isActive && hovered ? 0.85 : 1), 0.9 * (!isActive && hovered ? 0.905 : 1), 1], 0.1, dt)
-    easing.dampC(frame.current.material.color, hovered ? 'orange' : 'white', 0.1, dt)
+    // easing.dampC(frame.current.material.color, hovered ? 'orange' : 'white', 0.1, dt)
   })
   return (
     <group {...props}>
@@ -84,7 +84,7 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
         name={name}
         onPointerOver={(e) => (e.stopPropagation(), hover(true))}
         onPointerOut={() => hover(false)}
-        scale={[1, GOLDENRATIO, 0.05]}
+        scale={[1, 1, 0.05]}
         position={[0, GOLDENRATIO / 2, 0]}>
         <boxGeometry />
         <meshStandardMaterial color="white" metalness={1} roughness={0.5} envMapIntensity={2} />
@@ -94,7 +94,7 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
         </mesh>
         <Image raycast={() => null} ref={image} position={[0, 0, 0.8]} url={url} />
       </mesh>
-      <Text maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.025}>
+      <Text maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, 0.55, 0]} fontSize={0.025}>
         {name.split('-').join(' ')}
       </Text>
     </group>
