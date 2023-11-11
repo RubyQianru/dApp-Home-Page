@@ -13,23 +13,23 @@ extend ({MeshReflectorMaterial})
 
 export const Gallery = ({ images }) => (
   <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }} style={{height: "60vw"}}>
-    <color attach="background" args={['#white']} />
-    <fog attach="fog" args={['#white', 0, 15]} />
+    <color attach="background" args={['white']} />
+    <fog attach="fog" args={['white', 0, 15]} />
     <group position={[0, -0.5, 0]}>
       <Frames images={images} />
       <mesh rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[50, 50]} />
         <MeshReflectorMaterial
-          blur={[300, 100]}
+          blur={[600, 600]}
           resolution={2048}
-          mixBlur={1}
+          mixBlur={10}
           mixStrength={80}
-          roughness={0}
+          roughness={0.5}
           depthScale={1.2}
           minDepthThreshold={0.4}
           maxDepthThreshold={1.4}
-          color="#050505"
-          metalness={1}
+          color="grey"
+          metalness={0}
         />
       </mesh>
     </group>
