@@ -41,8 +41,8 @@ function Opensea() {
     fetchNFT();
   }, []);
 
-
-  const images = gallery.slice(0, 8).map((item, index) => {
+  const index = Math.floor(Math.random() * 11)
+  const images = gallery.slice(index, index+8).map((item, index) => {
     let position;
     let rotation = [0,0,0];
     if (index < 3) {
