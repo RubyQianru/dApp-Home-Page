@@ -42,7 +42,7 @@ function Opensea() {
   }, []);
 
 
-  const images = gallery.map((item, index) => {
+  const images = gallery.slice(0, 8).map((item, index) => {
     let position;
     let rotation = [0,0,0];
     if (index < 3) {
@@ -58,7 +58,7 @@ function Opensea() {
       index -= 5
       position = [index * 0.4+1.75, 0, index * 1.25+0.25];
       rotation = [0, -Math.PI / 2.5, 0]
-    }
+    } 
 
     return {
       position,
