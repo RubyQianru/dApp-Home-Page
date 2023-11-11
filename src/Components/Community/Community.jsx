@@ -17,9 +17,7 @@ const Community = () => {
           <ResponsiveAppBar/>
       </div>
 
-      <div className={`${styles.flexCenter}`} style={{position:'relative', top: '100px'}}>
-        <Community3d/>
-      </div>
+       
 
       <div className={`${styles.flexCenter}`} style={{position:'relative', top: '200px'}}>
         <Forum/>

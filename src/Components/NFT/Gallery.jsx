@@ -16,7 +16,7 @@ export const Gallery = ({ images }) => (
       <Frames images={images} />
       <mesh rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[50, 50]} />
-        {/* <MeshReflectorMaterial
+        <MeshReflectorMaterial
           blur={[300, 100]}
           resolution={2048}
           mixBlur={1}
@@ -27,7 +27,7 @@ export const Gallery = ({ images }) => (
           maxDepthThreshold={1.4}
           color="#050505"
           metalness={1}
-        /> */}
+        />
       </mesh>
     </group>
     <Environment preset="sunset" />
