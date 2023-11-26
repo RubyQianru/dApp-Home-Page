@@ -8,11 +8,6 @@ import Coinpaprika from './Components/Index/Coinpaprika';
 import GlobalMarket from './Components/Index/GlobalMarket';
 import Typography from '@mui/material/Typography';
 
-
-import Card from './Components/Index/Card';
-import Forum from './Components/Community/Forum/Forum';
-
-
 const Structure = () => {
   return (
     <div className = "w-full overflow-hidden" >

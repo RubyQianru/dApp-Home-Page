@@ -2,15 +2,19 @@ import { useSDK } from '@metamask/sdk-react';
 import React, { useState } from 'react';
 import { Button } from '@mui/material';
 import styles from '../style';
+import { useAccount } from './AccountContext';
 
 export const MetaMaskButton = (props) => {
   const [account, setAccount] = useState()
-  const { sdk, connected, connecting, provider, chainId } = useSDK();
+  const { sdk, connected } = useSDK()
+  const { setConnectedAccount } = useAccount()
 
   const connect = async () => {
     try {
       const accounts = await sdk?.connect();
-      setAccount(accounts?.[0]);
+      setAccount(accounts?.[0]); 
+      setConnectedAccount(accounts?.[0])
+
     } catch(err) {
       console.warn(`failed to connect..`, err);
     }
@@ -27,7 +31,7 @@ export const MetaMaskButton = (props) => {
       {connected && (
         <div>
           <>
-            {chainId && `Connected chain: ${chainId}`}
+            {/* {chainId && `Connected chain: ${chainId}`} */}
             <p></p>
             {account && `Connected account: ${account}`}
           </>

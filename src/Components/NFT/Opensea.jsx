@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Gallery } from './Gallery'
-import detectEthereumProvider from '@metamask/detect-provider';
+import { useAccount } from '../AccountContext';
 
 function Opensea() {
   const [gallery, setGallery] = useState([]);
@@ -64,23 +64,21 @@ function Opensea() {
     };
   });
 
-  const [preset, setPreset] = useState("night")
-  const [color, setColor] = useState("grey")
-  useEffect(()=>{
-    async function detectConnection(){
 
-      const provider = await detectEthereumProvider();
-      console.log(provider)
-      if (provider.isRevoked ) {
-        setPreset("studio")
-        setColor("white")
-      } else {
-        setPreset("night")
-        setColor("grey")
+  const [preset, setPreset] = useState('night');
+  const [color, setColor] = useState('#191920');
+  const accounts = useAccount();
+  console.log( accounts )
+
+  useEffect(() => {
+    async function detectConnection() {
+      if (accounts.account != null) {
+        setPreset('studio');
+        setColor('white');
       }
     }
-    detectConnection()
-  }, [])
+    detectConnection();
+  }, [accounts]);
 
   return (
      <>

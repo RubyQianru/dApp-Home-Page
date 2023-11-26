@@ -5,7 +5,7 @@ import { useCursor, MeshReflectorMaterial, Image, Text, Environment } from '@rea
 import { useRoute, useLocation } from 'wouter'
 import { easing } from 'maath'
 import getUuid from 'uuid-by-string'
-
+import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
 
 const GOLDENRATIO = 1.61803398875
 
@@ -13,8 +13,13 @@ extend ({MeshReflectorMaterial})
 
 export const Gallery = ({ images, preset, color }) => (
   <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }} style={{height: "60vw"}}>
+    <ambientLight intensity={10} />
     <color attach="background" args={[color]} />
     <fog attach="fog" args={[color, 0, 15]} />
+    <EffectComposer>
+        <DepthOfField focusDistance={0} focalLength={0.0001} bokehScale={15} height={120} />
+        {/* <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} /> */}
+      </EffectComposer>
     <group position={[0, -0.5, 0]}>
       <Frames images={images} />
       <mesh rotation={[-Math.PI / 2, 0, 0]}>
@@ -22,13 +27,13 @@ export const Gallery = ({ images, preset, color }) => (
         <MeshReflectorMaterial
           blur={[600, 600]}
           resolution={2048}
-          mixBlur={10}
+          mixBlur={20}
           mixStrength={80}
           roughness={0.5}
           depthScale={1.2}
           minDepthThreshold={0.4}
           maxDepthThreshold={1.4}
-          color={color}
+          color="#191920"
           metalness={0}
         />
       </mesh>
@@ -80,6 +85,7 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
     image.current.material.zoom = 1.5 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) / 3
     easing.damp3(image.current.scale, [0.85 * (!isActive && hovered ? 0.85 : 1), 0.9 * (!isActive && hovered ? 0.905 : 1), 1], 0.1, dt)
     // easing.dampC(frame.current.material.color, hovered ? 'orange' : 'white', 0.1, dt)
+
   })
   return (
     <group {...props}>
@@ -90,10 +96,10 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
         scale={[1, 1, 0.05]}
         position={[0, GOLDENRATIO / 2, 0]}>
         <boxGeometry />
-        <meshStandardMaterial color="white" metalness={1} roughness={0.5} envMapIntensity={2} />
+        <meshStandardMaterial metalness={1} roughness={0.5} envMapIntensity={2}/>
         <mesh ref={frame} raycast={() => null} scale={[0.9, 0.93, 0.9]} position={[0, 0, 0.2]}>
           <boxGeometry />
-          <meshBasicMaterial toneMapped={false} fog={false} />
+          <meshBasicMaterial />
         </mesh>
         <Image raycast={() => null} ref={image} position={[0, 0, 0.8]} url={url} />
       </mesh>
