@@ -1,9 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import styles from '../../style';
 import { Gallery } from './Gallery'
-
-
+import detectEthereumProvider from '@metamask/detect-provider';
 
 function Opensea() {
   const [gallery, setGallery] = useState([]);
@@ -41,8 +39,7 @@ function Opensea() {
     fetchNFT();
   }, []);
 
-  const index = Math.floor(Math.random() * 11)
-  const images = gallery.slice(index, index+8).map((item, index) => {
+  const images = gallery.slice(0, 8).map((item, index) => {
     let position;
     let rotation = [0,0,0];
     if (index < 3) {
@@ -67,13 +64,27 @@ function Opensea() {
     };
   });
 
-  
+  const [preset, setPreset] = useState("night")
+  const [color, setColor] = useState("grey")
+  useEffect(()=>{
+    async function detectConnection(){
 
-
+      const provider = await detectEthereumProvider();
+      console.log(provider)
+      if (provider.isRevoked ) {
+        setPreset("studio")
+        setColor("white")
+      } else {
+        setPreset("night")
+        setColor("grey")
+      }
+    }
+    detectConnection()
+  }, [])
 
   return (
      <>
-    <Gallery images={images} />
+    <Gallery images={images} preset={preset} color={color}/>
     </>
   );
 }

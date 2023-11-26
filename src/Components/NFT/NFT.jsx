@@ -1,12 +1,10 @@
 import React from 'react'
 import styles from '../../style';
-import Button from '@mui/material/Button';
 import ResponsiveAppBar from '../Navbar';
 import StickyFooter from '../StickyFooter';
-import Typography from '@mui/material/Typography';
-
 import Opensea from './Opensea';
-// import Test from './Test';
+import {useState} from 'react'
+
 const NFT = () => {
   return (
     <div className = "w-full overflow-hidden" >
@@ -15,14 +13,9 @@ const NFT = () => {
           <ResponsiveAppBar/>
       </div>
 
-      {/* <div className = {` ${styles.flexCenter} `} >
-          <Test/>
-      </div> */}
-
       <div className = {` ${styles.flexCenter} `} >
-          <Opensea/>
+        <Opensea/> 
       </div>
-
 
       <div className = {``}>
         <StickyFooter/>  

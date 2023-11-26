@@ -11,10 +11,10 @@ const GOLDENRATIO = 1.61803398875
 
 extend ({MeshReflectorMaterial})
 
-export const Gallery = ({ images }) => (
+export const Gallery = ({ images, preset, color }) => (
   <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }} style={{height: "60vw"}}>
-    <color attach="background" args={['white']} />
-    <fog attach="fog" args={['white', 0, 15]} />
+    <color attach="background" args={[color]} />
+    <fog attach="fog" args={[color, 0, 15]} />
     <group position={[0, -0.5, 0]}>
       <Frames images={images} />
       <mesh rotation={[-Math.PI / 2, 0, 0]}>
@@ -28,12 +28,12 @@ export const Gallery = ({ images }) => (
           depthScale={1.2}
           minDepthThreshold={0.4}
           maxDepthThreshold={1.4}
-          color="grey"
+          color={color}
           metalness={0}
         />
       </mesh>
     </group>
-    <Environment preset="sunset" />
+    <Environment preset={preset} />
   </Canvas>
 )
 
