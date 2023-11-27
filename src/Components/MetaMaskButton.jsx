@@ -22,20 +22,22 @@ export const MetaMaskButton = (props) => {
 
   return (
     <div className="MetaMaskButton">
-      <Button style={{  margin: 10, color: 'white'}} 
+      {!connected && (
+        <Button style={{  margin: 10, color: 'white'}} 
         onClick={connect} 
         variant="contained" 
         className={`${styles.buttonColor}`}>
         Connect
-      </Button>
+        </Button>
+      ) }
+
       {connected && (
-        <div>
-          <>
-            {/* {chainId && `Connected chain: ${chainId}`} */}
-            <p></p>
-            {account && `Connected account: ${account}`}
-          </>
-        </div>
+        <Button style={{  margin: 10}} 
+          onClick={connect} 
+          // variant="contained" 
+          className={``}>
+          Connected
+        </Button>
       )}
     </div>
   );
