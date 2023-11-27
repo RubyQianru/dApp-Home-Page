@@ -1,14 +1,30 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
+import { useAccount } from '../AccountContext';
+import { useState, useEffect } from 'react';
 
 function Reminder(){
+  
+  const [connect, setConnect] = useState(false)
+  const accounts = useAccount();
+  useEffect(() => {
+    async function detectConnection() {
+      if (accounts.account != null) {
+        setConnect(true)
+      }
+    }
+    detectConnection();
+  }, [accounts]);
+
 
     return(
         <>
-            <Typography variant="h2">
-                Connect to your wallet first.
-            </Typography>
-        
+            {!connect && (
+                <Typography variant="h2">
+                    Connect to your wallet first.
+                </Typography>
+
+            )} 
         </>
     )
 }

@@ -66,7 +66,8 @@ function Opensea() {
 
 
   const [preset, setPreset] = useState('night');
-  const [color, setColor] = useState('#191920');
+  const [color, setColor] = useState('#191920'); 
+  const [applyDepthOfField, setApplyDepthOfField] = useState(true)
   const accounts = useAccount();
   console.log( accounts )
 
@@ -75,6 +76,7 @@ function Opensea() {
       if (accounts.account != null) {
         setPreset('studio');
         setColor('white');
+        setApplyDepthOfField(false)
       }
     }
     detectConnection();
@@ -82,7 +84,7 @@ function Opensea() {
 
   return (
      <>
-    <Gallery images={images} preset={preset} color={color}/>
+    <Gallery images={images} preset={preset} color={color} applyDepthOfField={applyDepthOfField}/>
     </>
   );
 }

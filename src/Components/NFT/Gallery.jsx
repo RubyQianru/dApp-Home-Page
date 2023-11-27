@@ -11,15 +11,17 @@ const GOLDENRATIO = 1.61803398875
 
 extend ({MeshReflectorMaterial})
 
-export const Gallery = ({ images, preset, color }) => (
+export const Gallery = ({ images, preset, color, applyDepthOfField  }) => (
   <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }} style={{height: "60vw"}}>
     <ambientLight intensity={10} />
     <color attach="background" args={[color]} />
     <fog attach="fog" args={[color, 0, 15]} />
-    <EffectComposer>
+
+      {applyDepthOfField && (
+      <EffectComposer>
         <DepthOfField focusDistance={0} focalLength={0.0001} bokehScale={15} height={120} />
-        {/* <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} /> */}
       </EffectComposer>
+      )}
     <group position={[0, -0.5, 0]}>
       <Frames images={images} />
       <mesh rotation={[-Math.PI / 2, 0, 0]}>
