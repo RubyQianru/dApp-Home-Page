@@ -1,6 +1,6 @@
 import { useSDK } from '@metamask/sdk-react';
-import React, { useState } from 'react';
-import { Button } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Button, filledInputClasses } from '@mui/material';
 import styles from '../style';
 import { useAccount } from './AccountContext';
 
@@ -8,6 +8,7 @@ export const MetaMaskButton = (props) => {
   const [account, setAccount] = useState()
   const { sdk, connected } = useSDK()
   const { setConnectedAccount } = useAccount()
+  const [button, setButton] = useState(false)
 
   const connect = async () => {
     try {
@@ -20,9 +21,19 @@ export const MetaMaskButton = (props) => {
     }
   };
 
+  const accounts = useAccount();
+  useEffect(() => {
+    async function detectConnection() {
+      if (accounts.account != null) {
+        setButton(true)
+      }
+    }
+    detectConnection();
+  }, [accounts]);
+
   return (
     <div className="MetaMaskButton">
-      {!connected && (
+      {!button && (
         <Button style={{  margin: 10, color: 'white'}} 
         onClick={connect} 
         variant="contained" 
@@ -31,7 +42,7 @@ export const MetaMaskButton = (props) => {
         </Button>
       ) }
 
-      {connected && (
+      {button && (
         <Button style={{  margin: 10}} 
           onClick={connect} 
           // variant="contained" 
