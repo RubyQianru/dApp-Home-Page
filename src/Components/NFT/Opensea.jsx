@@ -5,39 +5,73 @@ import { useAccount } from '../AccountContext';
 
 function Opensea() {
   const [gallery, setGallery] = useState([]);
+  const [preset, setPreset] = useState('sunset');
+  const [color, setColor] = useState('#191920'); 
+  const [applyDepthOfField, setApplyDepthOfField] = useState(true)
+  const accounts = useAccount();
 
   useEffect(() => {
+    async function detectConnection() {
+      if (accounts.account != null) {
+        setPreset('dawn');
+        setColor('white');
+        setApplyDepthOfField(false)
 
-    async function fetchNFT() {      
-
-      try {
-        const promise =  axios.get(`https://api.opensea.io/api/v2/chain/ethereum/account/0xF68e4d63C8Ea83083d1cB9858210Cf2b03D8266B/nfts`, {
-            headers: {
-                accept: 'application/json', 
-                'x-api-key': 'dbade0c9e3364cf29487e74831a52337'
-            }
+        try {
+          const promise =  axios.get(`https://api.opensea.io/api/v2/chain/ethereum/account/${accounts.account}/nfts`, {
+              headers: {
+                  accept: 'application/json', 
+                  'x-api-key': 'dbade0c9e3364cf29487e74831a52337'
+              }
+            })
+          
+          const responses = await Promise.all([promise]);
+  
+          let nftArr = responses[0].data.nfts
+          let fetchedList = nftArr.map((item)=>{
+              const retObj = {
+                  image_url: item.image_url,
+                  name: item.name,
+                  desciption: item.description
+              }
+              return retObj
           })
-        
-        const responses = await Promise.all([promise]);
+  
+          setGallery(fetchedList)
+        } catch (error) {
+          console.error(error)
+        }
+      }else{
+        try {
+          const promise =  axios.get(`https://api.opensea.io/api/v2/chain/ethereum/account/0xF68e4d63C8Ea83083d1cB9858210Cf2b03D8266B/nfts`, {
+              headers: {
+                  accept: 'application/json', 
+                  'x-api-key': 'dbade0c9e3364cf29487e74831a52337'
+              }
+            })
+          
+          const responses = await Promise.all([promise]);
+  
+          let nftArr = responses[0].data.nfts
+          let fetchedList = nftArr.map((item)=>{
+              const retObj = {
+                  image_url: item.image_url,
+                  name: item.name,
+                  desciption: item.description
+              }
+              return retObj
+          })
+  
+          setGallery(fetchedList)
+        } catch (error) {
+          console.error(error)
+        }
 
-        let nftArr = responses[0].data.nfts
-
-        let fetchedList = nftArr.map((item)=>{
-            const retObj = {
-                image_url: item.image_url,
-                name: item.name,
-                desciption: item.description
-            }
-            return retObj
-        })
-
-        setGallery(fetchedList)
-      } catch (error) {
-        console.error(error)
       }
     }
-    fetchNFT();
-  }, []);
+    detectConnection();
+  }, [accounts]);
+
 
   const images = gallery.slice(0, 8).map((item, index) => {
     let position;
@@ -64,23 +98,6 @@ function Opensea() {
     };
   });
 
-
-  const [preset, setPreset] = useState('night');
-  const [color, setColor] = useState('#191920'); 
-  const [applyDepthOfField, setApplyDepthOfField] = useState(true)
-  const accounts = useAccount();
-  console.log( accounts )
-
-  useEffect(() => {
-    async function detectConnection() {
-      if (accounts.account != null) {
-        setPreset('studio');
-        setColor('white');
-        setApplyDepthOfField(false)
-      }
-    }
-    detectConnection();
-  }, [accounts]);
 
   return (
      <>

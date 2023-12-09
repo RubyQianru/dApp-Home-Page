@@ -13,15 +13,22 @@ extend ({MeshReflectorMaterial})
 
 export const Gallery = ({ images, preset, color, applyDepthOfField  }) => (
   <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }} style={{height: "60vw"}}>
-    <ambientLight intensity={10} />
+    {!applyDepthOfField && (
+      <ambientLight intensity={8} />
+    )
+    }
+    {applyDepthOfField && (
+      <>
+      <ambientLight intensity={1} />
+        <EffectComposer>
+          <DepthOfField focusDistance={0} focalLength={0.0001} bokehScale={15} height={120} />
+        </EffectComposer>
+      </>
+
+      )}
     <color attach="background" args={[color]} />
     <fog attach="fog" args={[color, 0, 15]} />
-
-      {applyDepthOfField && (
-      <EffectComposer>
-        <DepthOfField focusDistance={0} focalLength={0.0001} bokehScale={15} height={120} />
-      </EffectComposer>
-      )}
+      
     <group position={[0, -0.5, 0]}>
       <Frames images={images} />
       <mesh rotation={[-Math.PI / 2, 0, 0]}>
@@ -86,7 +93,7 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
   useFrame((state, dt) => {
     image.current.material.zoom = 1.5 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) / 3
     easing.damp3(image.current.scale, [0.85 * (!isActive && hovered ? 0.85 : 1), 0.9 * (!isActive && hovered ? 0.905 : 1), 1], 0.1, dt)
-    // easing.dampC(frame.current.material.color, hovered ? 'orange' : 'white', 0.1, dt)
+    easing.dampC(frame.current.material.color, hovered ? 'white' : 'grey', 0.1, dt)
 
   })
   return (
@@ -98,10 +105,10 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
         scale={[1, 1, 0.05]}
         position={[0, GOLDENRATIO / 2, 0]}>
         <boxGeometry />
-        <meshStandardMaterial metalness={1} roughness={0.5} envMapIntensity={2}/>
+        <meshStandardMaterial metalness={0.5} roughness={0.5} envMapIntensity={2}/>
         <mesh ref={frame} raycast={() => null} scale={[0.9, 0.93, 0.9]} position={[0, 0, 0.2]}>
           <boxGeometry />
-          <meshBasicMaterial />
+          <meshStandardMaterial />
         </mesh>
         <Image raycast={() => null} ref={image} position={[0, 0, 0.8]} url={url} />
       </mesh>
