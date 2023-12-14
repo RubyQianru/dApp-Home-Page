@@ -35,18 +35,7 @@ function Coinpaprika() {
           })
         })
 
-        // const promise2 = assets.map(asset =>{
-        //   return axios.get(`https://coinpaprika1.p.rapidapi.com/coins/${asset}/ohlcv/latest`, {
-        //     headers: {
-        //       'X-RapidAPI-Key': 'a484eec776msh455d9765b4f7a5cp1c5ad7jsn48589d43ba07',
-        //       'X-RapidAPI-Host': 'coinpaprika1.p.rapidapi.com'
-        //     }
-        //   })
-        // })
-
         const responses = await Promise.all(promise);
-
-        // console.log(responses2)
 
         let fetchedList = responses.map((response, index) => {
           const svg = IconSvg[assets[index]]
@@ -63,11 +52,6 @@ function Coinpaprika() {
             price: (assetPrice).toFixed(2),
             marketSize: (assetMarketSize).toFixed(2),
           };
-
-          // if (responses2[index] && responses2[index].data) {
-          //   retObject.open = Math.round(responses2[index].data[0].open*100)/100
-          //   retObject.marketCap = Math.round(responses2[index].data[0].market_cap*100)/100
-          // }
         
           return retObject;
         }); 
@@ -91,7 +75,7 @@ function Coinpaprika() {
   const rows = portfolio;
 
   return (
-    <div className={`${styles.flexCenter}`} >
+    <div className={`${styles.flexCenter} `} >
 
       <DataGrid
         style={{fontSize: "20px"}}

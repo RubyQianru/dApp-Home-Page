@@ -13,7 +13,7 @@ const Structure = () => {
     <div className = "w-full overflow-hidden" >
 
       <div className = {` ${styles.flexCenter}` }>
-          <ResponsiveAppBar/>
+          <ResponsiveAppBar textColor={"white"}/>
       </div>
 
       <div className={` ${styles.flexCenter} ${styles.bgGradient} relative h-screen ` } >
@@ -36,18 +36,13 @@ const Structure = () => {
         </div>
       </div>
 
-      <div className={` ${styles.paddingX} ${styles.flexStart}` }>
-        <div className={`` }>
+      <div className={`p-0 md:px-20`}>
           <GlobalMarket/>       
-        </div>
       </div>
 
-      <div className = {` ${styles.flexCenter}`}>
+      <div className = {`p-0 md:px-20`}>
         <Coinpaprika/>
       </div>
-
-      <br />
-      <br />
       
 
       <div className = {``}>

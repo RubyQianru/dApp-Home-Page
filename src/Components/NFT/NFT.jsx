@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from '../../style';
 import ResponsiveAppBar from '../Navbar';
 import StickyFooter from '../StickyFooter';
@@ -7,12 +7,13 @@ import { AccountProvider } from '../AccountContext';
 import Reminder from './Reminder';
 
 const NFT = () => {
+
   return (
     <AccountProvider>
     <div className = "w-full overflow-hidden" >
 
-      <div className = {` ${styles.flexCenter} `} style={{color:"black"}}>
-          <ResponsiveAppBar/>
+      <div className = {` ${styles.flexCenter} `}>
+          <ResponsiveAppBar textColor="black"/>
       </div>
 
       <div className = {` ${styles.flexCenter} `} >

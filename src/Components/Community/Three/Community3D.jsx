@@ -29,7 +29,7 @@ const Community3D = () => {
   return (
     <Canvas
       shadows
-      style={{ width: '30vw', height: '30vw' }}
+      style={{ width: '60vw', height: '60vh' }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >

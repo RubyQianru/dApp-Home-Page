@@ -59,13 +59,14 @@ function Post() {
 
     return (
         <div className={`${styles.flexCenter} ${styles.flexColumn}`}>
-            <Typography variant="h4">
+            <Typography variant='h3'>
                 Community
             </Typography>
+            <br/>
             <Button
                 variant="contained"
-                className={`${styles.buttonColor}`}
-                style={{ fontSize: '2vw', padding: "0.8vw 2vw" }}
+                className={`${styles.buttonColor} p-10`}
+                size="large"
                 onClick={toggleForm} // Add onClick event to toggle the form visibility
             >
                 Start a topic

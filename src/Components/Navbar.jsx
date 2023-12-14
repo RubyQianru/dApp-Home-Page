@@ -10,9 +10,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { MetaMaskButton } from './MetaMaskButton';
 
@@ -22,7 +20,7 @@ const pages = ['Community', 'NFT'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
   
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar( {textColor} ) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [scrolling, setScrolling] = React.useState(false);
@@ -62,12 +60,12 @@ function ResponsiveAppBar() {
     <AppBar position="fixed" 
     style={{ boxShadow: "initial", 
         background:scrolling ? 'white': 'none',
-        padding:"0 2.5rem",
+        // padding:"0 2.5rem",
         transition: 'background  0.5s, color 2s', 
-        color: scrolling ? 'black' : 'white',
+        color: scrolling ? 'black' : textColor,
         }} >
-      <Container maxWidth="100%"  style={{color: scrolling ? 'black' : 'white'}} >
-        <Toolbar disableGutters style={{color: scrolling ? 'black' : 'white'}} >
+      <Container maxWidth="100%"  style={{color: scrolling ? 'black' : textColor}} >
+        <Toolbar disableGutters style={{color: scrolling ? 'black' : textColor}} >
           <Typography
             variant="h6"
             noWrap
@@ -93,7 +91,7 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              style={{color:scrolling?'black':'white'}}
+              style={{color:scrolling?'black': textColor}}
             >
               <MenuIcon />
             </IconButton>
@@ -138,7 +136,7 @@ function ResponsiveAppBar() {
               letterSpacing: '.3rem',
               textDecoration: 'none',
               fontSize:"2rem",
-              color: scrolling ? 'black' : 'white'
+              color: scrolling ? 'black' : textColor
             }}
           >
             AVALA
@@ -149,7 +147,7 @@ function ResponsiveAppBar() {
                 key={page}
                 onClick={handleCloseNavMenu}
 
-                style={{color: scrolling ? 'black' : 'white'}} 
+                style={{color: scrolling ? 'black' : textColor}} 
                 sx={{ my: 2, 
                   display: 'block',
                   fontSize: '1.2rem',

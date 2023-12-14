@@ -14,15 +14,15 @@ const Community = () => {
     <AccountProvider>
       <div className = "w-full overflow-hidden" >
 
-        <div className = {` ${styles.flexCenter} `} style={{color:"black"}}>
-            <ResponsiveAppBar/>
+        <div className = {` ${styles.flexCenter} `}>
+            <ResponsiveAppBar textColor={"black"}/>
         </div>
 
-        <div className={`${styles.flexCenter}`} style={{position:'relative', top: '200px'}}>
+        <div className={`${styles.flexCenter} relative top-200`} >
           <Community3d/>
         </div>
 
-        <div className={`${styles.flexCenter}`} style={{position:'relative', top: '200px'}}>
+        <div className={`${styles.flexCenter} relative top-200`} >
           <Forum/>
         </div>
         
