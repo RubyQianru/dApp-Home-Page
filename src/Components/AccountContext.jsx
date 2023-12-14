@@ -18,7 +18,6 @@ export const AccountProvider = ({ children }) => {
 
 export const useAccount = () => {
   const context = useContext(AccountContext);
-  console.log(context)
   if (!context) {
     throw new Error('useAccount must be used within an AccountProvider');
   }

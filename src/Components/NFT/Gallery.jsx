@@ -6,8 +6,13 @@ import { useRoute, useLocation } from 'wouter'
 import { easing } from 'maath'
 import getUuid from 'uuid-by-string'
 import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
+import sound1 from '/audio/chant.mp3'
+import sound2 from '/audio/holyChant.mp3'
+import sound3 from '/audio/musicalChant.mp3'
 
 const GOLDENRATIO = 1.61803398875
+
+const soundArr = [new Audio(sound1), new Audio(sound2), new Audio(sound3)]
 
 extend ({MeshReflectorMaterial})
 
@@ -81,6 +86,8 @@ function Frames({ images, q = new THREE.Quaternion(), p = new THREE.Vector3() })
   )
 }
 
+let audioStack = []
+
 function Frame({ url, c = new THREE.Color(), ...props }) {
   const image = useRef()
   const frame = useRef()
@@ -89,6 +96,19 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
   const [rnd] = useState(() => Math.random())
   const name = getUuid(url)
   const isActive = params?.id === name
+  const handleHover = () => {
+    let hoverAudio = soundArr[Math.floor(Math.random() * 3)]
+    hoverAudio.currentTime = 0;
+    hoverAudio.play();
+    audioStack.push(hoverAudio)
+  }
+  const handleHoverEnd = () => {
+    let hoverAudio = audioStack.pop()
+    hoverAudio.pause();
+    hoverAudio.currentTime = 0; 
+
+  }
+
   useCursor(hovered)
   useFrame((state, dt) => {
     image.current.material.zoom = 1.5 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) / 3
@@ -100,13 +120,17 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
     <group {...props}>
       <mesh
         name={name}
-        onPointerOver={(e) => (e.stopPropagation(), hover(true))}
-        onPointerOut={() => hover(false)}
+        onPointerOver={(e) => (e.stopPropagation(), hover(true), handleHover())}
+        onPointerOut={(e) => (hover(false), handleHoverEnd())} 
         scale={[1, 1, 0.05]}
         position={[0, GOLDENRATIO / 2, 0]}>
         <boxGeometry />
         <meshStandardMaterial metalness={0.5} roughness={0.5} envMapIntensity={2}/>
-        <mesh ref={frame} raycast={() => null} scale={[0.9, 0.93, 0.9]} position={[0, 0, 0.2]}>
+        <mesh 
+          ref={frame} 
+          raycast={() => null} scale={[0.9, 0.93, 0.9]} 
+          position={[0, 0, 0.2]}
+        >
           <boxGeometry />
           <meshStandardMaterial />
         </mesh>
