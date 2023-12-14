@@ -20,7 +20,7 @@ function Reminder(){
     return(
         <>
             {!connect && (
-                <Typography variant="h2">
+                <Typography variant="h3" >
                     Connect to your wallet first.
                 </Typography>
 

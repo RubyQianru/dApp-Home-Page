@@ -3,10 +3,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../style';
 import Typography from '@mui/material/Typography';
 import { addComma } from './HelperFunctions';
-
 import "./Card.css"
-import { Gradient } from 'lamina';
-
 
 function GlobalMarket() {
   const [volume, setVolume] = useState(0);
@@ -26,14 +23,11 @@ function GlobalMarket() {
 
       try {
         const responses = await Promise.all(exchangeRatePromises);
-
         setVolume(addComma(responses[0].data.market_cap_usd))
-
         console.log(volume);
       } catch (error) {
         console.error(error);
       }
-  
     }
 
     fetchData();
@@ -42,11 +36,10 @@ function GlobalMarket() {
   return (
     
     <div className = {`${styles.paddingY} `} >
-      {/* <div className = {` gradient`} ></div> */}
-      <Typography variant="h5" style={{fontSize:"2vw"}}>
+      <Typography variant="h5" >
         Current Global Market Value:
       </Typography>
-        <div className={` gradientText`} style={{fontSize:"10vw"}}>
+        <div className={`gradientText`} >
           ${volume}
         </div>
 

@@ -16,23 +16,22 @@ const Structure = () => {
           <ResponsiveAppBar/>
       </div>
 
-      <div className={` ${styles.flexCenter} ${styles.bgGradient}` } style={{position:'relative', padding: '30px 0'}} >
-        <div className={``} style={{position:'relative'}}>
+      <div className={` ${styles.flexCenter} ${styles.bgGradient} relative h-screen ` } >
+        <div className={`absolute h-screen w-screen md:right-1/4`} >
           <Hero3D/>
         </div>
-        <div className={` ${styles.flexStart} ${styles.flexColumn}` } style={{position: 'absolute', left:'45%'}}>
+        <div className={` ${styles.flexStart} ${styles.flexColumn} absolute w-4/5 md:left-1/2 md:w-1/3` } >
             <div className={`${styles.heroText}`}> 
-              <Typography variant="h3" gutterBottom style={{fontWeight: 'lighter', fontSize:"4vw"}}>
+              <Typography gutterBottom variant='h1' >
                 AVALA
               </Typography>
-
-              <Typography variant="h4" gutterBottom style={{fontSize: "2vw"}}>
-              Communicate with Blockchain within a click
+              <Typography gutterBottom variant='h5' >
+                Communicate with Ethereum blockchain within a click
             </Typography>
             </div>
-            <Button variant="contained" className={`${styles.buttonColor}`} 
-              style={{fontSize: '2vw', padding:"0.8vw 2vw"}}>
-              LAUNCH APP
+            <br/>
+            <Button variant="outlined" size="large">
+              DAPP COMING SOON
             </Button>
         </div>
       </div>

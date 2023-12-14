@@ -12,7 +12,7 @@ const GOLDENRATIO = 1.61803398875
 extend ({MeshReflectorMaterial})
 
 export const Gallery = ({ images, preset, color, applyDepthOfField  }) => (
-  <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }} style={{height: "60vw"}}>
+  <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }} style={{height: "100vh"}}>
     {!applyDepthOfField && (
       <ambientLight intensity={8} />
     )
