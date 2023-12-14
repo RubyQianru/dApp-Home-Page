@@ -106,7 +106,6 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
     let hoverAudio = audioStack.pop()
     hoverAudio.pause();
     hoverAudio.currentTime = 0; 
-
   }
 
   useCursor(hovered)
