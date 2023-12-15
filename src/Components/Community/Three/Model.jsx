@@ -4,7 +4,7 @@ import { useGLTF } from "@react-three/drei";
 export function Model(props) {
   const { nodes, materials } = useGLTF("/Smug Pepe High Poly.glb");
   return (
-    <group {...props} dispose={null} scale={1.5}>
+    <group {...props} dispose={null} scale={2}>
       <mesh
         castShadow
         receiveShadow

@@ -3,11 +3,7 @@ import React, { useState, useEffect } from "react";
 import Typography from '@mui/material/Typography';
 import Post from "./Post";
 import RecordList from "./RecordList";
-
-
 import { Route, Routes } from "react-router-dom";
-
-
 
 function Forum() {
    
@@ -19,7 +15,6 @@ function Forum() {
         <Routes>
           <Route exact path="/" element={<RecordList />} />
           {/* <Route path="/create" element={<Create />} /> */}
-
         </Routes>
     </div>
     

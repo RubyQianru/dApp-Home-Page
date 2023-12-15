@@ -21,9 +21,9 @@ const Record = (props) => (
           {props.content}
         </Typography>
       </CardContent>
-      <CardActions className={`${styles.flexEnd}`}>
+      {/* <CardActions className={`${styles.flexEnd}`}>
         <Button size="small">Learn More</Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
     <br/>
   </div>

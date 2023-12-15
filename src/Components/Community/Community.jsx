@@ -18,15 +18,14 @@ const Community = () => {
             <ResponsiveAppBar textColor={"black"}/>
         </div>
 
-        <div className={`${styles.flexCenter} relative top-200`} >
+        <div className={`${styles.flexCenter} relative `} >
           <Community3d/>
         </div>
 
-        <div className={`${styles.flexCenter} relative top-200`} >
+        <div className={`${styles.flexCenter} relative`} >
           <Forum/>
         </div>
         
-
         <div className = {``}>
           <StickyFooter/>  
         </div>

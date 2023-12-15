@@ -3,15 +3,12 @@ import Typography from '@mui/material/Typography';
 import { useNavigate } from "react-router";
 import React, { useState, useEffect } from "react";
 import styles from '../../../style';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 
 function Post() {
-    const [formVisible, setFormVisible] = useState(false); // State to control form visibility
-
+    const [formVisible, setFormVisible] = useState(false); 
     const [title, setTitle] = useState("")
     const [user, setUser] = useState("")
     const [content, setContent] = useState("")
@@ -37,7 +34,6 @@ function Post() {
             console.error("Fetch error:", error);
         });
         
-        // navigate("/");
     }
 
     // Function to toggle the form visibility
@@ -48,7 +44,7 @@ function Post() {
     return (
         <div className={`${styles.flexCenter} ${styles.flexColumn}`}>
             <Typography variant='h3'>
-                Talk to Pepe
+                Any Comments?
             </Typography>
             <br/>
             <Button
