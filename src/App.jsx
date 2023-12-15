@@ -20,10 +20,10 @@ const App = () => {
 
   return (
     <AccountProvider>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Structure/>
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Structure/>
+      </ThemeProvider>
     </AccountProvider>
     
   )

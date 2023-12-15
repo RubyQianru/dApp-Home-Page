@@ -20,7 +20,7 @@ function Opensea() {
         setApplyDepthOfField(false)
 
         try {
-          const promise =  axios.get(`https://api.opensea.io/api/v2/chain/ethereum/account/0x0F0eAE91990140C560D4156DB4f00c854Dc8F09E/nfts`, {
+          const promise =  axios.get(`https://api.opensea.io/api/v2/chain/ethereum/account/${accounts.account}/nfts`, {
               headers: {
                   accept: 'application/json', 
                   'x-api-key': 'dbade0c9e3364cf29487e74831a52337'
@@ -38,7 +38,7 @@ function Opensea() {
               }
               return retObj
           })
-          fetchedList = fetchedList.slice(4, 9).concat(fetchedList.slice(12, 15));
+          // fetchedList = fetchedList.slice(4, 9).concat(fetchedList.slice(12, 15));
 
           setGallery(fetchedList)
         } catch (error) {

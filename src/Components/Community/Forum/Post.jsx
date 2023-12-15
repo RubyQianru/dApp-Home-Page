@@ -12,23 +12,11 @@ import CardContent from '@mui/material/CardContent';
 function Post() {
     const [formVisible, setFormVisible] = useState(false); // State to control form visibility
 
-    // const [form, setForm] = useState({
-    //     title: "",
-    //     user: "",
-    //     content: "",
-    // });
-
     const [title, setTitle] = useState("")
     const [user, setUser] = useState("")
     const [content, setContent] = useState("")
 
     const navigate = useNavigate();
-
-    // function updateForm(value) {
-    //     return setForm((prev) => {
-    //         return { ...prev, ...value };
-    //     });
-    // }
 
     async function onSubmit(e) {
         e.preventDefault();
@@ -38,7 +26,7 @@ function Post() {
         setUser("")
         setContent("")
 
-        await fetch("http://localhost:5050/record/add", {
+        await fetch("https://dapp-home-server-2f2035829a1e.herokuapp.com/record/add", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -60,7 +48,7 @@ function Post() {
     return (
         <div className={`${styles.flexCenter} ${styles.flexColumn}`}>
             <Typography variant='h3'>
-                Community
+                Talk to Pepe
             </Typography>
             <br/>
             <Button
@@ -73,7 +61,6 @@ function Post() {
             </Button>
 
             {formVisible && (
-  
                     <form onSubmit={onSubmit}
                         component="form"
                         noValidate
@@ -87,7 +74,7 @@ function Post() {
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
                                 />
-                            <TextField id="outlined-basic" label="User" variant="outlined" 
+                            <TextField id="outlined-basic" label="Contact" variant="outlined" 
                                 value={user}
                                 onChange={(e) => setUser(e.target.value)}
                                 />
