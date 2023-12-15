@@ -20,7 +20,7 @@ function Opensea() {
         setApplyDepthOfField(false)
 
         try {
-          const promise =  axios.get(`https://api.opensea.io/api/v2/chain/ethereum/account/0x2796cAbE1b6c1f7756c55436c793094CA6E8339b/nfts`, {
+          const promise =  axios.get(`https://api.opensea.io/api/v2/chain/ethereum/account/${accounts.account}/nfts`, {
               headers: {
                   accept: 'application/json', 
                   'x-api-key': 'dbade0c9e3364cf29487e74831a52337'
