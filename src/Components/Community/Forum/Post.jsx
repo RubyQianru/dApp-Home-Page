@@ -39,6 +39,7 @@ function Post() {
     // Function to toggle the form visibility
     function toggleForm() {
         setFormVisible(!formVisible);
+        window.scroll(0, 340);
     }
 
     return (
@@ -53,9 +54,9 @@ function Post() {
                 size="large"
                 onClick={toggleForm} // Add onClick event to toggle the form visibility
             >
-                Start a topic
+                leave your comment
             </Button>
-
+            <br/>
             {formVisible && (
                     <form onSubmit={onSubmit}
                         component="form"
