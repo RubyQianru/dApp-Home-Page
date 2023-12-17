@@ -45,7 +45,7 @@ export default function RecordList() {
      }
 
      const records = await response.json();
-     setRecords(records);
+     setRecords(records.reverse());
    }
 
    getRecords();
