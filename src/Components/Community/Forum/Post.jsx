@@ -39,7 +39,7 @@ function Post() {
     // Function to toggle the form visibility
     function toggleForm() {
         setFormVisible(!formVisible);
-        window.scroll(0, 550);
+        window.scroll(0, 500);
     }
 
     return (
