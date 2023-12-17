@@ -38,7 +38,7 @@ function Opensea() {
               }
               return retObj
           })
-          fetchedList = fetchedList.slice(4, 9).concat(fetchedList.slice(12, 15));
+          fetchedList = fetchedList.slice(5, 10).concat(fetchedList.slice(13, 16));
 
           setGallery(fetchedList)
         } catch (error) {
