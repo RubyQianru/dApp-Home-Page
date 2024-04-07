@@ -1,5 +1,6 @@
 # Overview
 - Avala dApp is a MERN fullstack web application Qianru Zhang is continuously developing.
+- Mobile Application: [Avala](https://github.com/RubyQianru/molab-2024-01-RubyZhang/tree/main)
   
 ### Exhbition
 <img width="600" alt="截屏2024-03-02 00 03 20" src="https://github.com/RubyQianru/dApp-Home-Page/assets/142470034/f8f9f933-47a6-4450-a34d-d27724305c3b">
