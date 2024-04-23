@@ -23,7 +23,6 @@ function Reminder(){
                 <Typography variant="h3" >
                     Connect to your wallet first.
                 </Typography>
-
             )} 
         </>
     )

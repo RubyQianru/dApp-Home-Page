@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../style';
 import Typography from '@mui/material/Typography';
 import { addComma } from './HelperFunctions';
-import "./Card.css"
+import './index.css'
 
 function GlobalMarket() {
   const [volume, setVolume] = useState(0);

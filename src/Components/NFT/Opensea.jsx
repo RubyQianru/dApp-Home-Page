@@ -45,21 +45,21 @@ function Opensea() {
         }
       }else{
         try {
-          const promise =  axios.get(`https://api.opensea.io/api/v2/chain/ethereum/account/0xF68e4d63C8Ea83083d1cB9858210Cf2b03D8266B/nfts`, {
-              headers: {
-                  accept: 'application/json', 
-                  'x-api-key': 'dbade0c9e3364cf29487e74831a52337'
-              }
-            })
-          
-          const responses = await Promise.all([promise]);
-  
-          let nftArr = responses[0].data.nfts
+          let nftArr = [
+            {image_url: "/nft/1.png"},
+            {image_url: "/nft/2.png"},
+            {image_url: "/nft/3.png"},
+            {image_url: "/nft/4.png"},
+            {image_url: "/nft/5.jpeg"},
+            {image_url: "/nft/6.jpeg"},
+            {image_url: "/nft/7.jpeg"},
+            {image_url: "/nft/8.jpeg"},
+          ]
           let fetchedList = nftArr.map((item)=>{
               const retObj = {
                   image_url: item.image_url,
-                  name: item.name,
-                  desciption: item.description
+                  name: "",
+                  desciption: ""
               }
               return retObj
           })
