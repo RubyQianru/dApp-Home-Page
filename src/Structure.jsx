@@ -3,7 +3,6 @@ import styles from './style';
 import Button from '@mui/material/Button';
 import ResponsiveAppBar from './Components/Navbar';
 import StickyFooter from './Components/StickyFooter';
-import Hero3D from './Components/Index/Hero3D';
 import Coinpaprika from './Components/Index/Coinpaprika';
 import GlobalMarket from './Components/Index/GlobalMarket';
 import Typography from '@mui/material/Typography';
@@ -19,6 +18,8 @@ const Structure = () => {
       </div>
 
       <div className={` ${styles.flexCenter} ${styles.bgGradient} relative h-screen ` } >
+        <img src="/hero.png" alt="hero page for Avala" className=""/>
+
         <div className={` ${styles.flexStart} ${styles.flexColumn} absolute w-4/5 md:left-1/2 md:w-1/3` } >
             <div className={`${styles.heroText}`}> 
               <Typography gutterBottom variant='h1' >
