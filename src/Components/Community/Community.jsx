@@ -14,10 +14,6 @@ const Community = () => {
     <AccountProvider>
       <div className = "w-full overflow-hidden" >
 
-        <div className = {` ${styles.flexCenter} `}>
-            <ResponsiveAppBar textColor={"black"}/>
-        </div>
-
         <div className={`${styles.flexCenter} relative `} >
           <Community3d/>
         </div>
@@ -26,11 +22,8 @@ const Community = () => {
           <Forum/>
         </div>
         
-        <div className = {``}>
-          <StickyFooter/>  
         </div>
 
-      </div>
     </AccountProvider>
   )
 }

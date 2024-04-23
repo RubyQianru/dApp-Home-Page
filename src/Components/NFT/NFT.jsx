@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styles from '../../style';
 import ResponsiveAppBar from '../Navbar';
 import StickyFooter from '../StickyFooter';
@@ -11,10 +11,6 @@ const NFT = () => {
   return (
     <AccountProvider>
     <div className = "w-full overflow-hidden" >
-
-      <div className = {` ${styles.flexCenter} `}>
-          <ResponsiveAppBar textColor="black"/>
-      </div>
 
       <div className = {` ${styles.flexCenter} `} >
           <Opensea/> 
@@ -30,10 +26,6 @@ const NFT = () => {
             <Reminder/>
         </div>
 
-      </div>
-
-      <div className = {``}>
-        <StickyFooter/>  
       </div>
 
     </div>

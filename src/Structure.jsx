@@ -7,6 +7,8 @@ import Hero3D from './Components/Index/Hero3D';
 import Coinpaprika from './Components/Index/Coinpaprika';
 import GlobalMarket from './Components/Index/GlobalMarket';
 import Typography from '@mui/material/Typography';
+import NFT from './Components/NFT/NFT';
+import Community from './Components/Community/Community';
 
 const Structure = () => {
   return (
@@ -37,13 +39,11 @@ const Structure = () => {
       </div>
 
       <div className={`p-0 md:px-20`}>
-          <GlobalMarket/>       
+          <GlobalMarket/>   
+          <Coinpaprika/>
+          <NFT/>
+          <Community/>
       </div>
-
-      <div className = {`p-0 md:px-20`}>
-        <Coinpaprika/>
-      </div>
-      
 
       <div className = {``}>
         <StickyFooter/>  
