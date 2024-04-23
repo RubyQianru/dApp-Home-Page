@@ -1,7 +1,5 @@
 import React from 'react'
 import styles from '../../style';
-import ResponsiveAppBar from '../Navbar';
-import StickyFooter from '../StickyFooter';
 import Opensea from './Opensea';
 import { AccountProvider } from '../AccountContext';
 import Reminder from './Reminder';

@@ -38,7 +38,6 @@ function Opensea() {
               }
               return retObj
           })
-          // fetchedList = fetchedList.slice(4, 9).concat(fetchedList.slice(12, 15));
 
           setGallery(fetchedList)
         } catch (error) {
@@ -117,31 +116,6 @@ function Opensea() {
       );
 
     }
-
-  // const images = gallery.slice(0, 8).map((item, index) => {
-  //   let position;
-  //   let rotation = [0,0,0];
-  //   if (index < 3) {
-  //     // Left
-  //     position = [index * -0.4-1.75, 0, index * 1.25+0.25];
-  //     rotation = [0, Math.PI / 2.5, 0]
-  //   } else if (index < 5) {
-  //     // Front
-  //     position = [-0.7 + (index - 3) * 1.4, 0, -0.6];
-
-  //   } else if (index < 8) {
-  //     // Right
-  //     index -= 5
-  //     position = [index * 0.4+1.75, 0, index * 1.25+0.25];
-  //     rotation = [0, -Math.PI / 2.5, 0]
-  //   } 
-
-  //   return {
-  //     position,
-  //     rotation,
-  //     url: item.image_url
-  //   };
-  // });
 
 
   return (
