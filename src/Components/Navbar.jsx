@@ -16,9 +16,7 @@ import { MetaMaskButton } from './MetaMaskButton';
 
 import { Link } from 'react-router-dom';
 
-const pages = ['Community', 'NFT'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-  
+const pages = ['Community', 'NFT'];  
 
 function ResponsiveAppBar( {textColor} ) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -28,16 +26,9 @@ function ResponsiveAppBar( {textColor} ) {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   useEffect(() => {
@@ -60,7 +51,6 @@ function ResponsiveAppBar( {textColor} ) {
     <AppBar position="fixed" 
     style={{ boxShadow: "initial", 
         background:scrolling ? 'white': 'none',
-        // padding:"0 2.5rem",
         transition: 'background  0.5s, color 2s', 
         color: scrolling ? 'black' : textColor,
         }} >
@@ -160,6 +150,10 @@ function ResponsiveAppBar( {textColor} ) {
                   </Link>
               </Button>
             ))}
+          </Box>
+
+          <Box  className ={`${styles.flexSpaceX}`} style={{}}>
+            <MetaMaskButton/>
           </Box>
         </Toolbar>
       </Container>
