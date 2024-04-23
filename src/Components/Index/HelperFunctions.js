@@ -11,8 +11,6 @@ function addComma(input) {
     return input
   }
 
-
-
 function nameCleanup(input){
     let index = 0
     let res = ""

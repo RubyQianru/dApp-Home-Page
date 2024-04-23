@@ -1,6 +1,6 @@
 import { useSDK } from '@metamask/sdk-react';
 import React, { useState, useEffect } from 'react';
-import { Button, filledInputClasses } from '@mui/material';
+import { Button } from '@mui/material';
 import styles from '../style';
 import { useAccount } from './AccountContext';
 

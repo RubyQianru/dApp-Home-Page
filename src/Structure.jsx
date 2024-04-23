@@ -19,9 +19,6 @@ const Structure = () => {
       </div>
 
       <div className={` ${styles.flexCenter} ${styles.bgGradient} relative h-screen ` } >
-        <div className={`absolute h-screen w-screen md:right-1/4`} >
-          <Hero3D/>
-        </div>
         <div className={` ${styles.flexStart} ${styles.flexColumn} absolute w-4/5 md:left-1/2 md:w-1/3` } >
             <div className={`${styles.heroText}`}> 
               <Typography gutterBottom variant='h1' >
