@@ -8,8 +8,6 @@ import getUuid from 'uuid-by-string'
 
 const GOLDENRATIO = 1.61803398875
 
-const soundArr = [new Audio(sound1), new Audio(sound2), new Audio(sound3)]
-
 extend ({MeshReflectorMaterial})
 
 export const Gallery = ({ images, preset, color, applyDepthOfField  }) => (

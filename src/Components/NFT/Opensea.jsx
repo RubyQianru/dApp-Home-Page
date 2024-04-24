@@ -49,7 +49,7 @@ function Opensea() {
             {image_url: "/nft/1.png"},
             {image_url: "/nft/2.png"},
             {image_url: "/nft/3.png"},
-            {image_url: "/nft/4.png"},
+            {image_url: "/nft/4.jpeg"},
             {image_url: "/nft/5.jpeg"},
             {image_url: "/nft/6.jpeg"},
             {image_url: "/nft/7.jpeg"},
@@ -114,7 +114,6 @@ function Opensea() {
         
       }
       );
-
     }
 
 

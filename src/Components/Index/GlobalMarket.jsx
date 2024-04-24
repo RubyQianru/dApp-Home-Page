@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../style';
 import Typography from '@mui/material/Typography';
 import { addComma } from './HelperFunctions';
+import { Skeleton } from '@mui/material';
 import './index.css'
 
 function GlobalMarket() {
@@ -18,13 +19,11 @@ function GlobalMarket() {
             'X-RapidAPI-Host': 'coinpaprika1.p.rapidapi.com'
           }
         }),
-        // Add more axios.get() calls for other exchange rates if needed
       ];
 
       try {
         const responses = await Promise.all(exchangeRatePromises);
         setVolume(addComma(responses[0].data.market_cap_usd))
-        console.log(volume);
       } catch (error) {
         console.error(error);
       }
@@ -33,20 +32,15 @@ function GlobalMarket() {
     fetchData();
   }, []);
 
-  return (
-    
+  return (  
     <div className = {`${styles.paddingY} `} >
       <Typography variant="h5" >
         Current Global Market Value:
       </Typography>
         <div className={`gradientText`} >
-          ${volume}
+          {volume == 0 ? <Skeleton variant="text" width={500} animation="wave"/> : `$${volume}`}
         </div>
-
-
     </div>
-    
-
   );
 }
 

@@ -4,6 +4,7 @@ import styles from '../../style';
 import IconSvg from './IconSvg';
 import {addComma, nameCleanup} from './HelperFunctions';
 import { DataGrid } from '@mui/x-data-grid';
+import { Skeleton } from '@mui/material';
 
 function Coinpaprika() {
   const [portfolio, setPortfolio] = useState([]);
@@ -77,17 +78,20 @@ function Coinpaprika() {
   return (
     <div className={`${styles.flexCenter} `} >
 
-      <DataGrid
-        style={{fontSize: "20px"}}
-        rows={rows}
-        columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 10},
-          },
-        }}
+      {portfolio.length == 0 ? 
         
-      />
+      <Skeleton variant="rectangular" style={{ width: '90vw', height: '80vh' }} animation="wave"/> :       
+        <DataGrid
+          style={{fontSize: "20px"}}
+          rows={rows}
+          columns={columns}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 10},
+            },
+          }}      
+        />}
+
 
     </div>
   );

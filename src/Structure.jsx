@@ -35,6 +35,7 @@ const Structure = () => {
             </Button>
         </div>
       </div>
+      
 
       <NFT/> 
 

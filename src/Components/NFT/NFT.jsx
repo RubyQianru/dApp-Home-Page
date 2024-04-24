@@ -9,12 +9,9 @@ const NFT = () => {
   return (
     <AccountProvider>
     <div className = "w-full overflow-hidden" >
-
       <div className = {` ${styles.flexCenter} `} >
           <Opensea/> 
-
       </div>
-
     </div>
     </AccountProvider>
   )
