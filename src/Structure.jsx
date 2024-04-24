@@ -18,7 +18,7 @@ const Structure = () => {
       </div>
 
       <div className={` ${styles.flexCenter} ${styles.bgGradient} relative h-screen` } >
-        <img src="/hero.png" alt="hero page for Avala" className="h-screen w-auto object-cover"/>
+        <img src="/hero.png" alt="hero page for Avala" className="h-screen w-auto object-cover" loading="lazy"/>
 
         <div className={` ${styles.flexStart} ${styles.flexColumn} absolute w-4/5 md:left-1/2 md:w-1/3` } >
             <div className={`${styles.heroText}`}> 
@@ -35,10 +35,11 @@ const Structure = () => {
             </Button>
         </div>
       </div>
+
       <NFT/> 
+
       <div className={`p-0 md:px-20`}>
           <GlobalMarket/>  
-          
           <Coinpaprika/>
           <Community/>
       </div>

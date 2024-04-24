@@ -5,10 +5,6 @@ import { useCursor, MeshReflectorMaterial, Image, Text, Environment } from '@rea
 import { useRoute, useLocation } from 'wouter'
 import { easing } from 'maath'
 import getUuid from 'uuid-by-string'
-import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
-import sound1 from '/audio/chant.mp3'
-import sound2 from '/audio/holyChant.mp3'
-import sound3 from '/audio/musicalChant.mp3'
 
 const GOLDENRATIO = 1.61803398875
 
@@ -25,9 +21,9 @@ export const Gallery = ({ images, preset, color, applyDepthOfField  }) => (
     {applyDepthOfField && (
       <>
       <ambientLight intensity={1} />
-        <EffectComposer>
+        {/* <EffectComposer>
           <DepthOfField focusDistance={0} focalLength={0.0001} bokehScale={15} height={120} />
-        </EffectComposer>
+        </EffectComposer> */}
       </>
 
       )}
@@ -86,8 +82,6 @@ function Frames({ images, q = new THREE.Quaternion(), p = new THREE.Vector3() })
   )
 }
 
-let audioStack = []
-
 function Frame({ url, c = new THREE.Color(), ...props }) {
   const image = useRef()
   const frame = useRef()
@@ -96,17 +90,6 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
   const [rnd] = useState(() => Math.random())
   const name = getUuid(url)
   const isActive = params?.id === name
-  const handleHover = () => {
-    let hoverAudio = soundArr[Math.floor(Math.random() * 3)]
-    hoverAudio.currentTime = 0;
-    hoverAudio.play();
-    audioStack.push(hoverAudio)
-  }
-  const handleHoverEnd = () => {
-    let hoverAudio = audioStack.pop()
-    hoverAudio.pause();
-    hoverAudio.currentTime = 0; 
-  }
 
   useCursor(hovered)
   useFrame((state, dt) => {
@@ -119,8 +102,8 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
     <group {...props}>
       <mesh
         name={name}
-        onPointerOver={(e) => (e.stopPropagation(), hover(true), handleHover())}
-        onPointerOut={(e) => (hover(false), handleHoverEnd())} 
+        onPointerOver={(e) => (e.stopPropagation(), hover(true))}
+        onPointerOut={(e) => (hover(false))} 
         scale={[1, 1, 0.05]}
         position={[0, GOLDENRATIO / 2, 0]}>
         <boxGeometry />
