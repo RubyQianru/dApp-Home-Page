@@ -5,7 +5,7 @@
 ### Exhbition
 <img width="600" alt="截屏2024-03-02 00 03 20" src="https://github.com/RubyQianru/dApp-Home-Page/assets/142470034/f8f9f933-47a6-4450-a34d-d27724305c3b">
 
-- [NYU Winter Show 2023](https://itp.nyu.edu/shows/winter2023/projects/#10578-avala-nft-gallery)
+[NYU Winter Show 2023](https://itp.nyu.edu/shows/winter2023/projects/#10578-avala-nft-gallery)
 
 ### Techstack
 
@@ -18,8 +18,32 @@
 - Integrating Web APIs with Node.js on global cryptocurrency data and quotes to establish real-time analytics platform.
 - Showcasing expertise in Web3D interactive user interface using React Three Fiber to promote innovative web VR CX.
 
-# Site preview
-- [Site Link](http://avaladapp.com/)
+## Setup
+
+### Prerequisites
+
+1. A text editor - preferably [VS Code](https://code.visualstudio.com/)
+2. Live Server - Install Live Server pluggin in your VS Code.
+3. Installed node.js, nodemon, express dependencies.
+
+### Develop
+
+To develop this document, you can follow the steps provided below:
+1. Create a fork of this project on Github
+2. Open the file in VS Code
+3. Run the following command:
+
+```
+npm run dev
+```
+
+## Site preview
+- The website is deployed on: [Site Link](http://avaladapp.com/)
+
+## Built with
+
+* [VS Code](https://code.visualstudio.com/)
+* [Github](https://github.com)
   
 ### /NFT Gallery: Web3D VR Gallery
 
@@ -36,6 +60,19 @@
 
 ### /Community: Interactive 3D Design
 <img src="https://github.com/RubyQianru/dApp-Home-Page/assets/142470034/1fc660e6-a125-453e-88aa-aaf47fcb19af" width=500>
+
+# Notes & Process
+
+## Process & Documentation
+
+1. The frontend structure and styling is based on Week3's files.
+2. I used npm package manager for managing plugins including express, cors, nodemon, etc.
+3. I created a POST route for scraping NY Times API, and save response data using JSON format. You may see the saved files in /data folder.
+
+## Challenges & Struggles
+
+1. Handling POST. 
+2. The development requires constant debugging using console.log, in order to accurately and correctly handle JSON formats.
 
 # Design Process
 - [Link](https://rubyqianru.cargo.site/admin)
