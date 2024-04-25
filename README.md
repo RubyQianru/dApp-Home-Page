@@ -53,9 +53,10 @@ npm run dev
 
 # Final Proposal: Performance-oriented Improvements
 
-- Skeleton
-- Lazy Loading
-- 
+- Implementation of skeleton in combination of API fetching: [Link](https://mui.com/material-ui/react-skeleton/)
+- Implementation of lazy loading for heavy rendering tasks: [Link](https://react.dev/reference/react/lazy)
+- Add "sign up" function for receiving newsletter.
+- Add user database for users who connect their wallets.
   
 ### /NFT Gallery: Web3D VR Gallery
 
