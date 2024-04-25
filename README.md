@@ -23,8 +23,11 @@
 ### Prerequisites
 
 1. A text editor - preferably [VS Code](https://code.visualstudio.com/)
-2. Live Server - Install Live Server pluggin in your VS Code.
-3. Installed node.js, nodemon, express dependencies.
+2. Installed node.js, vite, express dependencies.
+
+```
+npm install
+```
 
 ### Develop
 
@@ -47,6 +50,12 @@ npm run dev
 * [Github](https://github.com)
 * [Netlify](https://www.netlify.com)
 * [Heroku](https://heroku.com)
+
+# Final Proposal: Performance-oriented Improvements
+
+- Skeleton
+- Lazy Loading
+- 
   
 ### /NFT Gallery: Web3D VR Gallery
 
