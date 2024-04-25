@@ -57,7 +57,10 @@ npm run dev
 - Implementation of lazy loading for heavy rendering tasks: [Link](https://react.dev/reference/react/lazy)
 - Add "sign up" function for receiving newsletter.
 - Add user database for users who connect their wallets.
-  
+- Add better guidence and interactions for improved user experience.
+
+# Preview
+
 ### /NFT Gallery: Web3D VR Gallery
 
 <img src="https://github.com/RubyQianru/dApp-Home-Page/blob/main/chrome-capture-2023-11-30-4.gif" width=500>
