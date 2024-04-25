@@ -39,11 +39,14 @@ npm run dev
 
 ## Site preview
 - The website is deployed on: [Site Link](http://avaladapp.com/)
+- The API is deployed using Heroku. Go to /Community route to interact with the community forum.
 
 ## Built with
 
 * [VS Code](https://code.visualstudio.com/)
 * [Github](https://github.com)
+* [Netlify](https://www.netlify.com)
+* [Heroku](https://heroku.com)
   
 ### /NFT Gallery: Web3D VR Gallery
 
