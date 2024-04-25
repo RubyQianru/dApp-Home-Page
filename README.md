@@ -81,14 +81,11 @@ A cutting-edge web 3D experience seamlessly linked to users' decentralized web 3
 
 ## Process & Documentation
 
-1. The frontend structure and styling is based on Week3's files.
-2. I used npm package manager for managing plugins including express, cors, nodemon, etc.
-3. I created a POST route for scraping NY Times API, and save response data using JSON format. You may see the saved files in /data folder.
+1. 
 
 ## Challenges & Struggles
 
-1. Handling POST. 
-2. The development requires constant debugging using console.log, in order to accurately and correctly handle JSON formats.
+1. Lots of performance improvement for better user experience!! 
 
 # Design Process
 - [Link](https://rubyqianru.cargo.site/admin)
