@@ -79,10 +79,6 @@ A cutting-edge web 3D experience seamlessly linked to users' decentralized web 3
 
 # Notes & Process
 
-## Process & Documentation
-
-1. 
-
 ## Challenges & Struggles
 
 1. Lots of performance improvement for better user experience!! 
