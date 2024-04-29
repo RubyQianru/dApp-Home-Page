@@ -6,9 +6,9 @@ import StickyFooter from './Components/StickyFooter';
 import Coinpaprika from './Components/Index/Coinpaprika';
 import GlobalMarket from './Components/Index/GlobalMarket';
 import Typography from '@mui/material/Typography';
-import NFT from './Components/NFT/NFT';
 import Community from './Components/Community/Community';
 import { Link } from 'react-router-dom';
+import LearnMore from './Components/Index/LearnMore';
 
 const Structure = () => {
   return (
@@ -43,7 +43,11 @@ const Structure = () => {
                 DAPP IN PROGRESS
               </Button>
             </a>
+
         </div>
+        
+        <LearnMore/>
+
       </div>
       
       <div className="w-screen h-screen flex justify-center items-center">

@@ -21,6 +21,16 @@
   box-sizing: border-box;
 }
 
+.learnMore {
+  color: white;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  animation: blink 1s infinite ease alternate;
+} 
+
 .card {
     width: var(--card-width);
     height: var(--card-height);
@@ -81,15 +91,6 @@
     animation: spin 8s linear infinite;
   }
   
-  @keyframes spin {
-    0% {
-      --rotate: 0deg;
-    }
-    100% {
-      --rotate: 360deg;
-    }
-  }
-  
   a {
     color: #212534;
     text-decoration: none;
@@ -116,4 +117,22 @@
     background-clip: text;
     font-size: 96px;
     font-weight: bold;
+  }
+
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
