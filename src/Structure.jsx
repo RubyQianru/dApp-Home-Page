@@ -8,6 +8,7 @@ import GlobalMarket from './Components/Index/GlobalMarket';
 import Typography from '@mui/material/Typography';
 import NFT from './Components/NFT/NFT';
 import Community from './Components/Community/Community';
+import { Link } from 'react-router-dom';
 
 const Structure = () => {
   return (
@@ -26,18 +27,35 @@ const Structure = () => {
                 AVALA
               </Typography>
               <Typography gutterBottom variant='h5' >
-                Communicate with Ethereum blockchain within a click
-            </Typography>
+                Realtime data analytics platform designed specifically for mene coins.
+              </Typography>
+
             </div>
             <br/>
-            <Button size="large" variant="contained">
-              DAPP IN PROGRESS
-            </Button>
+            <a href="https://github.com/RubyQianru/molab-2024-01-RubyZhang" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              >
+              <Button size="large" 
+                variant="contained" 
+                className={`${styles.buttonColor}`}
+              >
+                DAPP IN PROGRESS
+              </Button>
+            </a>
         </div>
       </div>
       
-
-      <NFT/> 
+      <div className="w-screen h-screen flex justify-center items-center">
+        <Link to="/NFT">
+          <Button size="large" 
+            variant="contained" 
+            className={`${styles.buttonColor} `}
+          >
+            Your VIP NFT Gallery
+          </Button>
+        </Link>
+      </div>
 
       <div className={`p-0 md:px-20`}>
           <GlobalMarket/>  

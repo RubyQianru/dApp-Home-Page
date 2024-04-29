@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { useEffect, useRef, useState } from 'react'
 import { Canvas, useFrame, extend } from '@react-three/fiber'
 import { useCursor, MeshReflectorMaterial, Image, Text, Environment } from '@react-three/drei'
+import {  DepthOfField, EffectComposer } from '@react-three/postprocessing'
 import { useRoute, useLocation } from 'wouter'
 import { easing } from 'maath'
 import getUuid from 'uuid-by-string'
@@ -19,9 +20,9 @@ export const Gallery = ({ images, preset, color, applyDepthOfField  }) => (
     {applyDepthOfField && (
       <>
       <ambientLight intensity={1} />
-        {/* <EffectComposer>
+        <EffectComposer>
           <DepthOfField focusDistance={0} focalLength={0.0001} bokehScale={15} height={120} />
-        </EffectComposer> */}
+        </EffectComposer>
       </>
 
       )}

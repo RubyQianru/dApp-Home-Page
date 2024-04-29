@@ -25,7 +25,6 @@ const App = () => {
         <Structure/>
       </ThemeProvider>
     </AccountProvider>
-    
   )
 }
 
