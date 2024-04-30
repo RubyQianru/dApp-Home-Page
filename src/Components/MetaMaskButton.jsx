@@ -34,7 +34,7 @@ export const MetaMaskButton = (props) => {
   return (
     <div className="MetaMaskButton">
       {!button && (
-        <Button style={{  margin: 10, color: 'white'}} 
+        <Button style={{ margin: 10, color: 'white'}} 
         onClick={connect} 
         variant="contained" 
         className={`${styles.buttonColor}`}>
@@ -43,7 +43,7 @@ export const MetaMaskButton = (props) => {
       ) }
 
       {button && (
-        <Button style={{  margin: 10}} 
+        <Button style={{ margin: 10}} 
           onClick={connect} 
           // variant="contained" 
           className={``}>
