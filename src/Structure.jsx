@@ -45,12 +45,17 @@ const Structure = () => {
             </a>
 
         </div>
-        
-        <LearnMore/>
-
+        <LearnMore text="Learn More" color="white"/>
       </div>
-      
-      <div className="w-screen h-screen flex justify-center items-center">
+
+      <div className="w-screen h-screen flex justify-center items-center relative">
+        <Typography variant="h2">
+          
+        </Typography>
+        <LearnMore text="Go" color="black"/>  
+      </div>
+
+      <div className="w-screen h-screen flex justify-center items-center relative">
         <Link to="/NFT">
           <Button size="large" 
             variant="contained" 
@@ -59,10 +64,13 @@ const Structure = () => {
             Your VIP NFT Gallery
           </Button>
         </Link>
+        <LearnMore text="And More" color="black"/>  
       </div>
 
       <div className={`p-0 md:px-20`}>
           <GlobalMarket/>  
+          <div class="container"> </div>
+
           <Coinpaprika/>
           <Community/>
       </div>

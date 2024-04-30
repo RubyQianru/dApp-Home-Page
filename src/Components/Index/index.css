@@ -22,13 +22,10 @@
 }
 
 .learnMore {
-  color: white;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
+  z-index: 18;
   animation: blink 1s infinite ease alternate;
+  position: absolute;
+  top: 90%
 } 
 
 .card {
