@@ -20,7 +20,6 @@ const Index = () => {
       <section className={`p-0 md:px-20`}>
           <GlobalMarket/>  
           <div class="container"> </div>
-
           <Coinpaprika/>
           <Community/>
       </section>
