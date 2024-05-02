@@ -45,3 +45,27 @@
       filter:blur(100px);
       animation: animateAfter 5s infinite ease ;
     }
+
+ @keyframes animateBefore {
+    0% {
+      transform: scale(1.0);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+    100% {
+      transform:  scale(1.0);
+    }
+  }
+
+  @keyframes animateAfter {
+    0% {
+      transform: scale(1.0);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+    100% {
+      transform: scale(1.0);
+    }
+  }

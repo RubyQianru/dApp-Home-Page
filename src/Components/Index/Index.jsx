@@ -7,6 +7,7 @@ import Community from '../Community/Community';
 import Hero from './Hero/Hero';
 import Banner from './NFT/Banner';
 import Enter from './NFT/Enter';
+import BlurryBlob from './Decor/BlurryBlob';
 
 const Index = () => {
   return (
@@ -19,7 +20,7 @@ const Index = () => {
 
       <section className={`p-0 md:px-20`}>
           <GlobalMarket/>  
-          <div class="container"> </div>
+          <BlurryBlob/>
           <Coinpaprika/>
           <Community/>
       </section>

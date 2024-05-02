@@ -1,8 +1,12 @@
 import React from "react";
+import "./index.css"
 
 function BlurryBlob() {
     return (
-        <div class="container"> </div>
+        <>
+            <div className="container"> 
+            </div>
+        </>
     )
 }
 
