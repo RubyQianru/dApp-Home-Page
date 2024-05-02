@@ -27,7 +27,7 @@ const Structure = () => {
                 AVALA
               </Typography>
               <Typography gutterBottom variant='h5' >
-                Realtime data analytics platform designed specifically for mene coins.
+                Realtime data analytics platform designed specifically for meme coins.
               </Typography>
 
             </div>
@@ -49,13 +49,17 @@ const Structure = () => {
       </div>
 
       <div className="w-screen h-screen flex justify-center items-center relative">
+        <div class="container"> </div>
+        <div className="w-1/2">
         <Typography variant="h2">
-          
+          Interact with your digital ownership in vritural 3D gallery.
         </Typography>
+        </div>
         <LearnMore text="Go" color="black"/>  
       </div>
 
       <div className="w-screen h-screen flex justify-center items-center relative">
+      <img src="/gallery.png" alt="gallery preview for NFT gallery" className="absolute h-screen w-auto object-cover" loading="lazy"/>
         <Link to="/NFT">
           <Button size="large" 
             variant="contained" 
@@ -64,6 +68,7 @@ const Structure = () => {
             Your VIP NFT Gallery
           </Button>
         </Link>
+
         <LearnMore text="And More" color="black"/>  
       </div>
 
