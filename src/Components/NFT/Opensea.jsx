@@ -38,7 +38,6 @@ function Opensea() {
               }
               return retObj
           })
-          // fetchedList = fetchedList.slice(4, 9).concat(fetchedList.slice(12, 15));
 
           setGallery(fetchedList)
         } catch (error) {
@@ -46,21 +45,21 @@ function Opensea() {
         }
       }else{
         try {
-          const promise =  axios.get(`https://api.opensea.io/api/v2/chain/ethereum/account/0xF68e4d63C8Ea83083d1cB9858210Cf2b03D8266B/nfts`, {
-              headers: {
-                  accept: 'application/json', 
-                  'x-api-key': 'dbade0c9e3364cf29487e74831a52337'
-              }
-            })
-          
-          const responses = await Promise.all([promise]);
-  
-          let nftArr = responses[0].data.nfts
+          let nftArr = [
+            {image_url: "/nft/1.png"},
+            {image_url: "/nft/2.png"},
+            {image_url: "/nft/3.png"},
+            {image_url: "/nft/4.jpeg"},
+            {image_url: "/nft/5.jpeg"},
+            {image_url: "/nft/6.jpeg"},
+            {image_url: "/nft/7.jpeg"},
+            {image_url: "/nft/8.jpeg"},
+          ]
           let fetchedList = nftArr.map((item)=>{
               const retObj = {
                   image_url: item.image_url,
-                  name: item.name,
-                  desciption: item.description
+                  name: "",
+                  desciption: ""
               }
               return retObj
           })
@@ -115,33 +114,7 @@ function Opensea() {
         
       }
       );
-
     }
-
-  // const images = gallery.slice(0, 8).map((item, index) => {
-  //   let position;
-  //   let rotation = [0,0,0];
-  //   if (index < 3) {
-  //     // Left
-  //     position = [index * -0.4-1.75, 0, index * 1.25+0.25];
-  //     rotation = [0, Math.PI / 2.5, 0]
-  //   } else if (index < 5) {
-  //     // Front
-  //     position = [-0.7 + (index - 3) * 1.4, 0, -0.6];
-
-  //   } else if (index < 8) {
-  //     // Right
-  //     index -= 5
-  //     position = [index * 0.4+1.75, 0, index * 1.25+0.25];
-  //     rotation = [0, -Math.PI / 2.5, 0]
-  //   } 
-
-  //   return {
-  //     position,
-  //     rotation,
-  //     url: item.image_url
-  //   };
-  // });
 
 
   return (

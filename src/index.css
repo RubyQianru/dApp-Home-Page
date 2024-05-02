@@ -138,3 +138,24 @@
   background: rgba(255, 255, 255, 0.6);
   filter: blur(750px);
 }
+
+/* main index styling starts here */
+
+
+.typed-effect {
+  overflow: hidden;
+  border-right: transparent;
+  white-space: nowrap;
+  animation:
+      typing 3.5s steps(40, end),
+}
+  
+  @keyframes typing {
+    from {
+        width: 0;
+    }
+  
+    to {
+        width: 100%;
+    }
+  }
