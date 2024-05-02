@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import styles from '../../style';
+import styles from '../../../style';
 import Typography from '@mui/material/Typography';
 import { addComma } from './HelperFunctions';
 import { Skeleton } from '@mui/material';
-import './index.css'
+import '../index.css'
 
 function GlobalMarket() {
   const [volume, setVolume] = useState(0);
