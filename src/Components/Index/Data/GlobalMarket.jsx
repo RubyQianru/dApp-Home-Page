@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import styles from '../../../style';
-import Typography from '@mui/material/Typography';
 import { addComma } from './HelperFunctions';
 import { Skeleton } from '@mui/material';
 import '../index.css'
@@ -34,9 +33,9 @@ function GlobalMarket() {
 
   return (  
     <div className = {`${styles.paddingY} `} >
-      <Typography variant="h5" >
+      <p className="text-xl md:text-2xl" >
         Current Global Market Value:
-      </Typography>
+      </p>
         <div className={`gradientText`} >
           {volume == 0 ? <Skeleton variant="text" width={500} animation="wave"/> : `$${volume}`}
         </div>

@@ -65,12 +65,12 @@ function Coinpaprika() {
   }, []);
 
   const columns = [
-    { field: 'icon', headerName: 'ICON', width: 250, renderCell: (params) => (
+    { field: 'icon', headerName: 'ICON', width: 200, renderCell: (params) => (
       <div  dangerouslySetInnerHTML={{ __html: params.value}} />
     ), },
-    { field: 'name', headerName: 'NAME',width:  400},
-    { field: 'price', headerName: 'PRICE', width: 400, renderCell: (params) => addComma(params.value) },
-    { field: 'marketSize', headerName: '24H VOLUME', width: 400, renderCell: (params) => addComma(params.value)},
+    { field: 'name', headerName: 'NAME',width:  300},
+    { field: 'price', headerName: 'PRICE', width: 300, renderCell: (params) => addComma(params.value) },
+    { field: 'marketSize', headerName: '24H VOLUME', width: 300, renderCell: (params) => addComma(params.value)},
   ];
 
   const rows = portfolio;
@@ -91,8 +91,6 @@ function Coinpaprika() {
             },
           }}      
         />}
-
-
     </div>
   );
 }

@@ -20,7 +20,6 @@ const pages = ['Community', 'NFT'];
 
 function ResponsiveAppBar( {textColor} ) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [scrolling, setScrolling] = React.useState(false);
 
   const handleOpenNavMenu = (event) => {
