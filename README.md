@@ -42,7 +42,7 @@ npm run dev
 
 ## Site preview
 - The website is deployed on: [Site Link](http://avaladapp.com/)
-- The API is deployed using Heroku. Go to /Community route to interact with the community forum.
+- The API is deployed using Heroku. The repo for the server is documented on: [dApp-Home-Server](https://github.com/RubyQianru/dApp-Home-Server/tree/main)
 
 ## Built with
 
@@ -51,10 +51,8 @@ npm run dev
 * [Netlify](https://www.netlify.com)
 * [Heroku](https://heroku.com)
 
-# Final Proposal: Performance-oriented Improvements
+# Future Improvements
 
-- Implementation of skeleton in combination of API fetching: [Link](https://mui.com/material-ui/react-skeleton/)
-- Implementation of lazy loading for heavy rendering tasks: [Link](https://react.dev/reference/react/lazy)
 - Add "sign up" function for receiving newsletter.
 - Add user database for users who connect their wallets.
 - Add better guidence and interactions for improved user experience.
