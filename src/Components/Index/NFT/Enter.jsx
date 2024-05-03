@@ -9,7 +9,7 @@ function Enter() {
     const isMediumScreen = useMediaQuery('(max-width:780px)'); 
 
     return(
-        <section className="w-screen h-screen flex justify-center items-center relative">
+        <section className="w-screen h-screen flex flex-col justify-center items-center relative">
             { isMediumScreen? (
                 <img 
                     src="/gallery/galleryMobile.png" 
@@ -24,11 +24,13 @@ function Enter() {
                     loading="lazy"/>
             )}
 
-            <div className="w-1/2">
-                <p className="bold text-3xl md:text-5xl">
+            <div className="w-1/2 z-10">
+                <p className="bold text-3xl text-white md:text-5xl">
                     Interact with your digital ownership in vritural 3D gallery.
                 </p>
             </div>
+
+            <br />
 
             <Link to="/NFT">
                 <Button size="large" 
