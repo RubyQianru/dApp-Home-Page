@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
 import { Link } from 'react-router-dom';
-import LearnMore from "../LearnMore";
 import styles from "../../../style";
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -14,19 +13,19 @@ function Enter() {
                 <img 
                     src="/gallery/galleryMobile.png" 
                     alt="Mobile view of 3D NFT gallery" 
-                    className="absolute h-screen w-auto object-cover" 
+                    className="absolute w-screen h-screen object-cover" 
                     loading="lazy"/>
             ) : (
                 <img 
                     src="/gallery/gallery.png" 
                     alt="Desktop view of 3D NFT gallery" 
-                    className="absolute h-screen w-auto object-cover" 
+                    className="absolute w-screen h-screen object-cover" 
                     loading="lazy"/>
             )}
 
-            <div className="w-1/2 z-10">
-                <p className="bold text-3xl text-white md:text-5xl">
-                    Interact with your digital ownership in vritural 3D gallery.
+            <div className="w-2/3 z-10 text-center">
+                <p className="bold text-4xl text-white md:text-5xl">
+                    Your digital ownership
                 </p>
             </div>
 
@@ -37,7 +36,7 @@ function Enter() {
                     variant="contained" 
                     className={`${styles.buttonColor} `}
                 >
-                    Your VIP NFT Gallery
+                    NFT Gallery
                 </Button>
             </Link>
 

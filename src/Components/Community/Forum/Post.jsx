@@ -39,14 +39,15 @@ function Post() {
     // Function to toggle the form visibility
     function toggleForm() {
         setFormVisible(!formVisible);
-        window.scroll(0, 500);
+        if(!formVisible) window.scrollBy(0, 200);
     }
 
     return (
         <div className={`${styles.flexCenter} ${styles.flexColumn}`}>
-            <Typography variant='h3'>
-                Any Comments?
-            </Typography>
+
+            <p className="bold text-3xl md:text-4xl">
+                Governed by Avala Community
+            </p>
             <br/>
             <Button
                 variant="contained"
@@ -54,7 +55,7 @@ function Post() {
                 size="large"
                 onClick={toggleForm} // Add onClick event to toggle the form visibility
             >
-                leave your comment
+                Avala Foreum
             </Button>
             <br/>
             {formVisible && (

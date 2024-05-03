@@ -43,8 +43,8 @@
       border-radius: 50%;
       width: 40vw;
       height: 60vh;
-      margin-left: 30vw;
-      margin-top: 30vh;
+      margin-left: 60vw;
+      margin-top: 20vh;
       filter:blur(100px);
       animation: animateAfter 5s infinite ease ;
     }

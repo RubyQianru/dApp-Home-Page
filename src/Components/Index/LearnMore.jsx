@@ -6,17 +6,15 @@ function LearnMore(props) {
 
     function learnMoreClicked() {
         window.scrollTo({
-            top: window.scrollY + window.innerHeight, 
+            top: window.innerHeight, 
             behavior: 'smooth' 
         });
     }
 
     return (
-        <Typography variant="h5" className={`learnMore text-${props.color}`}>
-            <div onClick={learnMoreClicked}>
+            <p onClick={learnMoreClicked} className="bold text-xl text-white md:text-2xl learnMore">
                 {props.text}
-            </div>
-        </Typography>
+            </p>
     )
 }
 

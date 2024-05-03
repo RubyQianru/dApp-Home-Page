@@ -16,7 +16,6 @@ const Index = () => {
       <Hero/>
       <Enter/>
       <Feature/>
-
       <section className={`p-0 md:px-20`}>
           <GlobalMarket/>  
           <Coinpaprika/>

@@ -9,20 +9,21 @@ function Hero() {
             <img 
                 src="/hero.png" 
                 alt="hero page for Avala" 
-                className="h-screen w-auto object-cover" 
+                className="h-screen w-screen object-cover left-0" 
                 loading="lazy"/>
 
             <div className={` ${styles.flexStart} ${styles.flexColumn} absolute w-4/5 md:left-1/2 md:w-1/3` } >
                 <div className={`${styles.heroText}`}> 
-                    <Typography gutterBottom variant='h1' >
-                        AVALA
-                    </Typography>
-                    <Typography gutterBottom variant='h5' >
+                    <p className="bold text-7xl text-white md:text-8xl">
+                        Avala
+                    </p>
+                    <br />
+                    <p className="bold text-3xl text-white md:text-4xl">
                         Realtime data analytics platform designed specifically for meme coins.
-                    </Typography>
+                    </p>
                 </div>
                 <br/>
-                    <a href="https://github.com/RubyQianru/molab-2024-01-RubyZhang" 
+                <a href="https://github.com/RubyQianru/molab-2024-01-RubyZhang" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     >
