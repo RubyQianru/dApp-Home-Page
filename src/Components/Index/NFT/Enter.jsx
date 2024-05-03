@@ -24,6 +24,12 @@ function Enter() {
                     loading="lazy"/>
             )}
 
+            <div className="w-1/2">
+                <p className="bold text-3xl md:text-5xl">
+                    Interact with your digital ownership in vritural 3D gallery.
+                </p>
+            </div>
+
             <Link to="/NFT">
                 <Button size="large" 
                     variant="contained" 
@@ -33,7 +39,6 @@ function Enter() {
                 </Button>
             </Link>
 
-            <LearnMore text="And More" color="black"/>  
         </section>
     )
 }

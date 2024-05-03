@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
-import styles from '../../../style';
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 const Record = (props) => (
@@ -21,9 +17,6 @@ const Record = (props) => (
           {props.content}
         </Typography>
       </CardContent>
-      {/* <CardActions className={`${styles.flexEnd}`}>
-        <Button size="small">Learn More</Button>
-      </CardActions> */}
     </Card>
     <br/>
   </div>
@@ -33,7 +26,6 @@ const Record = (props) => (
 export default function RecordList() {
  const [records, setRecords] = useState([]);
 
- // This method fetches the records from the database.
  useEffect(() => {
    async function getRecords() {
      const response = await fetch(`https://dapp-home-server-2f2035829a1e.herokuapp.com/record`);

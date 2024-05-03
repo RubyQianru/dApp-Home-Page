@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '../style';
 import { useEffect } from 'react';
-
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,10 +12,9 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { MetaMaskButton } from './MetaMaskButton';
-
 import { Link } from 'react-router-dom';
 
-const pages = ['Community', 'NFT'];  
+const pages = [ 'NFT'];  
 
 function ResponsiveAppBar( {textColor} ) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

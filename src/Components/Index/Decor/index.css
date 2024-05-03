@@ -2,7 +2,7 @@
     position: absolute;
     z-index: -1; 
     transition: top 5s ease, left 5s ease;
-    left: 40vw;
+    top: 30vh;
   }
   
 .container::before,
@@ -22,9 +22,8 @@
           transparent 360deg
         );
       border-radius: 50%;
-      width: 80vw;
-      height: 80vh;
-      margin-left: -30vw;
+      width: 60vw;
+      height: 60vh;
       filter:blur(100px);  
       animation: animateBefore 5s infinite ease ;
     }
@@ -41,7 +40,7 @@
       border-radius: 50%;
       width: 40vw;
       height: 60vh;
-      margin-left: -30vw;
+      margin-left: 30vw;
       filter:blur(100px);
       animation: animateAfter 5s infinite ease ;
     }

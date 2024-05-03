@@ -77,9 +77,7 @@ function Coinpaprika() {
 
   return (
     <div className={`${styles.flexCenter} `} >
-
       {portfolio.length == 0 ? 
-        
       <Skeleton variant="rectangular" style={{ width: '90vw', height: '80vh' }} animation="wave"/> :       
         <DataGrid
           style={{fontSize: "20px"}}
